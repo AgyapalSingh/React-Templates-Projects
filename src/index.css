@@ -60,17 +60,26 @@ header {
   padding-bottom: 2px;
   border-bottom: 1px solid var(--theme-color-primary);
 }
-.home-link{
-  text-decoration: none;
-  color: var(--theme-color-teritary);
+.home-link {
   font-family: var(--theme-font-fam-primary);
-  border-bottom: 2px solid var(--theme-color-teritary);
+  background-color: var(--theme-color-primary);
+  width: 100%;
+  border: none;
   height: 31px;
   text-align: center;
   align-items: center;
   display: flex;
   justify-content: center;
 }
+
+.home-link a{
+  text-decoration: none;
+  color: var(--theme-color-teritary);
+  padding: 0px 10px;
+  border-left: 1px solid var(--theme-color-teritary);
+  border-right: 1px solid var(--theme-color-teritary);
+}
+
 
 @media screen and (max-width: 1280px) {
   .Header h1 {
@@ -84,7 +93,8 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 140px;
+  margin-top: 160px;
+  border-top: 1px solid var(--theme-color-hover);
 }
 
 .ag-template-title {

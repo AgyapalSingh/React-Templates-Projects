@@ -16,7 +16,7 @@ const Header = () => {
         </h1>
       </div>
       <div className="home-link">
-        <Link className="home-link" to="/">Home</Link>
+        <Link to="/">Home</Link>
       </div>
     </header>
   );
