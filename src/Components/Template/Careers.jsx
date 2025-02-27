@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Careers = () => {
-  return (
-    <div>Careers</div>
-  )
-}
+  return <main className="ag-tempalte-container">Careers</main>;
+};
 
-export default Careers
+export default Careers;

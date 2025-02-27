@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const AffiliateProgram = () => {
-  return (
-    <div>AffiliateProgram</div>
-  )
-}
+  return <main className="ag-tempalte-container">AffiliateProgram</main>;
+};
 
-export default AffiliateProgram
+export default AffiliateProgram;

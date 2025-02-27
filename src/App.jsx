@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import Careers from "./Components/Template/Careers";
 import Faqs from "./Components/Template/Faqs";
+import AffiliateProgram from "./Components/Template/AffiliateProgram";
 
 function App() {
   const [showTopButton, setShowTopButton] = useState(false);
@@ -33,6 +34,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/affiliate-program-page" element={<AffiliateProgram />} />
         <Route path="/careers-page" element={<Careers />} />
         <Route path="/faqs-page" element={<Faqs/>} />
       </Routes>

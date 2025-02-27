@@ -2,7 +2,7 @@ import React from 'react'
 
 const Faqs = () => {
   return (
-    <div>Faqs</div>
+    <main className="ag-tempalte-container">Faqs</main>
   )
 }
 
