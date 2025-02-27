@@ -21,18 +21,30 @@
   --theme-color-teritary: #183457;
 }
 
-body{
-    background: var(--theme-color-primary);
-    color: var(--theme-color-secondary);
+body {
+  background: var(--theme-color-primary);
+  color: var(--theme-color-secondary);
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 130px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
 
 .Header {
-  height: 100px;
   background-color: var(--theme-color-teritary);
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100px;
+  width: 100%;
 }
 
 .Header h1 {
@@ -46,7 +58,18 @@ body{
   text-decoration: none;
   color: var(--theme-color-primary);
   padding-bottom: 2px;
-  border-bottom: 1px solid  var(--theme-color-primary);;
+  border-bottom: 1px solid var(--theme-color-primary);
+}
+.home-link{
+  text-decoration: none;
+  color: var(--theme-color-teritary);
+  font-family: var(--theme-font-fam-primary);
+  border-bottom: 2px solid var(--theme-color-teritary);
+  height: 31px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1280px) {
@@ -55,85 +78,84 @@ body{
   }
 }
 
-
 /* Home Page */
-.ag-tempalte-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.ag-tempalte-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 140px;
 }
 
-.ag-template-title{
-    font-size: 18px;
-    font-weight: 300;
-    font-family: var(--theme-font-fam-primary);
-    margin-top: 20px;
+.ag-template-title {
+  font-size: 18px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-primary);
+  margin-top: 20px;
 }
 
-.ag-template-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    height: 400px;
-    box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+.ag-template-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
 }
 
-.ag-template-card-image{
-    width: 100%;
-    height: 250px;
+.ag-template-card-image {
+  width: 100%;
+  height: 250px;
 }
 
-.ag-template-card-image img{
-    height: 250px;
-    width: 300px;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-
+.ag-template-card-image img {
+  height: 250px;
+  width: 300px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
-.ag-template-card-content{
-    display: flex;
-    background-color: var(--theme-color-teritary);
-    border-radius: 0px 0px 10px 10px;
-    padding: 10px;
-    width: 100%;
-}
-
-.ag-template-card-info{
-    width: 60%;
+.ag-template-card-content {
+  display: flex;
+  background-color: var(--theme-color-teritary);
+  border-radius: 0px 0px 10px 10px;
+  padding: 10px;
+  width: 100%;
 }
 
-.ag-template-card-info h1{
-    font-size: 16px;
-    font-weight: 300;
-    font-family: var(--theme-font-fam-primary);
-    color: var(--theme-color-primary);
+.ag-template-card-info {
+  width: 60%;
 }
 
-.ag-template-card-info span{
-    font-size: 12px;
-    font-weight: 300;
-    font-family: var(--theme-font-fam-secondary);
-    color: var(--theme-color-hover);
+.ag-template-card-info h1 {
+  font-size: 16px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-primary);
+  color: var(--theme-color-primary);
 }
 
-.ag-template-card-btn{
-    height: 100%;
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+.ag-template-card-info span {
+  font-size: 12px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-secondary);
+  color: var(--theme-color-hover);
 }
 
-.ag-template-card-btn p{
-    color: var(--theme-color-secondary);
-    align-items: center;
-    font-size: 10px;
-    background-color: var(--theme-color-primary);
-    outline: none;
-    border: none;
-    padding: 5px 8px;
-    border-radius: 2px;
-    font-family: var(--theme-font-fam-secondary);
+.ag-template-card-btn {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.ag-template-card-btn p {
+  color: var(--theme-color-secondary);
+  align-items: center;
+  font-size: 10px;
+  background-color: var(--theme-color-primary);
+  outline: none;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 2px;
+  font-family: var(--theme-font-fam-secondary);
 }
