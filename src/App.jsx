@@ -1,4 +1,3 @@
-import "./App.css";
 import { IoIosArrowUp } from "react-icons/io";
 import { useEffect, useState } from "react";
 import Header from "./Components/Header";
