@@ -101,7 +101,7 @@ header {
   font-size: 18px;
   font-weight: 300;
   font-family: var(--theme-font-fam-primary);
-  margin-top: 20px;
+  margin: 40px 0px;
 }
 
 .ag-template-card {
@@ -109,19 +109,23 @@ header {
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 400px;
   box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 5px;
+
+  background-color: var(--theme-color-teritary);
 }
 
 .ag-template-card-image {
-  width: 100%;
-  height: 250px;
+  height: 300px;
+  padding: 20px;
+  width: 300px;
 }
 
 .ag-template-card-image img {
-  height: 250px;
-  width: 300px;
-  aspect-ratio: 16/9;
+  height: 260px;
+  width: 260px;
   object-fit: cover;
 }
 .ag-template-card-content {
@@ -129,11 +133,12 @@ header {
   background-color: var(--theme-color-teritary);
   border-radius: 0px 0px 10px 10px;
   padding: 10px;
+  height: 100px;
   width: 100%;
 }
 
 .ag-template-card-info {
-  width: 60%;
+  width: 100%;
 }
 
 .ag-template-card-info h1 {
@@ -151,11 +156,10 @@ header {
 }
 
 .ag-template-card-btn {
-  height: 100%;
-  width: 40%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  padding: 20px 20px;
 }
 
 .ag-template-card-btn p {

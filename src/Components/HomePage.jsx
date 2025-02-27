@@ -7,7 +7,6 @@ const HomePage = () => {
   return (
     <main className="ag-tempalte-container">
       <h1 className="ag-template-title">
-        <FaBars />
         List of Templates
       </h1>
 
@@ -29,13 +28,13 @@ const HomePage = () => {
                   </i>
                 </span>
               </div>
+            </div>
 
-              <div className="ag-template-card-btn">
+            <div className="ag-template-card-btn">
                 <Link to={`/${item.linkTo}`}>
                   <p>View Template</p>
                 </Link>
               </div>
-            </div>
           </div>
         ))}
       </section>
