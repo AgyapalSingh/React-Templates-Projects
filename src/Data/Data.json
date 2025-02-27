@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Affiliate Program Page",
+    "description": "Contact Form is linked",
+    "description-2": "Google Sheet Using API.",
+    "linkTo": "affiliate-program-page",
+    "img": "/imgs/Affliliate-project.png"
+  },
+  {
+    "id": 2,
+    "title": "Career Page",
+    "description": "Contact Form is linked",
+    "description-2": "Google Sheet and Google Drive Using API. ",
+    "linkTo": "careers-page",
+    "img": "/imgs/Affliliate-project.png"
+  },
+  {
+    "id": 3,
+    "title": "FAqs Page",
+    "description": "Contact Form is linked",
+    "description-2": "Google Sheet Using API. and Search Functionality to search FAQs" ,
+    "linkTo": "faqs-page",
+    "img": "/imgs/Affliliate-project.png"
+  }
+]
