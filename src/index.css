@@ -324,6 +324,8 @@ footer {
 .ag-affiliate-info table{
   border: 0.1px solid var(--theme-color-teritary);
   font-family: var(--theme-font-fam-secondary);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .ag-affiliate-tHead{
@@ -349,9 +351,7 @@ td strong{
 }
 
 
-/* .ag-affiliate-desc{
-  font-size: 8px;
-} */
+
 
 
 
