@@ -72,19 +72,62 @@ const AffiliateProgram = () => {
         <div className="ag-affiliate-info">
           <h1>Join our Affiliate program</h1>
           <p className="ag-affiliate-info-para">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente
-            pariatur, quidem cum, modi ratione tempore cumque ad esse voluptatum
-            ipsam ea sed doloremque id enim beatae. Commodi placeat praesentium
-            minus autem aut eligendi tempora nobis vitae, quam voluptatibus
-            blanditiis dolores accusamus vel adipisci repudiandae incidunt
-            minima laudantium corrupti iusto natus obcaecati similique beatae.
-            Animi iusto odio error perferendis quasi vitae inventore repellat
-            culpa tempore, velit, nobis fugiat quisquam sit mollitia eos
-            suscipit eveniet! Sit voluptates voluptatem delectus quia quos
-            consequatur unde deserunt vero atque explicabo ex voluptatibus
-            placeat, quo totam temporibus et iste labore incidunt doloribus.
-            Minus recusandae necessitatibus quis.
+            The AffiliateProgram component is a React-based form that allows
+            users to apply for an affiliate program. It collects user details
+            such as name, email, social media links, and a personal message
+            explaining their interest. The form data is then submitted to{" "}
+            <span> Google Sheets using the Google Sheets API </span> for easy
+            tracking and management.
           </p>
+
+          <table border="1" cellPadding="10" cellSpacing="0">
+            <thead className="ag-affiliate-tHead">
+              <tr>
+                <th>Feature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Google Sheets Integration</strong>
+                </td>
+                <td>
+                  Submits form data directly to Google Sheets via the Google
+                  Sheets API.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Dynamic Input Fields</strong>
+                </td>
+                <td>Users can add or remove extra social media links.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Real-Time Feedback</strong>
+                </td>
+                <td>
+                  Displays submission status messages for better user
+                  experience.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Automatic Date Logging</strong>
+                </td>
+                <td>Captures the submission date automatically.</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Error Handling</strong>
+                </td>
+                <td>
+                  Provides appropriate feedback in case of submission failure.
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div className="ag-affiliate-form-container">
           <div className="ag-affiliate-form">
@@ -161,9 +204,7 @@ const AffiliateProgram = () => {
               </button>
 
               {formResponse && (
-                <p className="ag-formResponse-message">
-                  {formResponse}
-                </p>
+                <p className="ag-formResponse-message">{formResponse}</p>
               )}
             </form>
           </div>

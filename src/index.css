@@ -313,7 +313,50 @@ footer {
   font-weight: 300;
   font-family: var(--theme-font-fam-secondary);
   color: rgb(85, 85, 85);
+  margin: 0px 0px 40px 0px;
 }
+
+.ag-affiliate-info p span{
+  font-style: italic;
+  font-weight: 500;
+}
+
+.ag-affiliate-info table{
+  border: 0.1px solid var(--theme-color-teritary);
+  font-family: var(--theme-font-fam-secondary);
+}
+
+.ag-affiliate-tHead{
+  background-color: var(--theme-color-teritary);
+  height: 70px;
+  color: var(--theme-color-primary);
+  font-family: var(--theme-font-fam-primary);
+}
+
+.ag-affiliate-tHead tr th{
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+td{
+  padding: 5px;
+  text-align: left;
+  font-size: 12px;
+}
+td strong{
+  font-size: 14px;
+}
+
+
+/* .ag-affiliate-desc{
+  font-size: 8px;
+} */
+
+
+
+
+
 
 .ag-affiliate-form-container {
   width: 90%;
