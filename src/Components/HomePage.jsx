@@ -38,32 +38,6 @@ const HomePage = () => {
           ))}
         </div>
       </section>
-      {/* <section className="ag-template-section">
-        <div className="ag-template-card">
-          <div className="ag-template-card-image">
-            <img src={IMG1} alt="img" />
-          </div>
-
-          <div className="ag-template-card-content">
-            <div className="ag-template-card-info">
-              <h1>{data.title}</h1>
-              <span>
-                Contact Form is linked to
-                <i>
-                  {" "}
-                  <b> Google Sheet using API. </b>
-                </i>
-              </span>
-            </div>
-
-            <div className="ag-template-card-btn">
-              <Link to="/affiliate-program-page">
-                <p>View Template</p>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </main>
   );
 };
