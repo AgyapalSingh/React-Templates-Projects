@@ -1,193 +1,275 @@
 /* Affiliate Program Page */
 
 .ag-job-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .ag-job-info {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .ag-job-info h1 {
-    font-size: 24px;
-    font-weight: 300;
-    font-family: var(--theme-font-fam-primary);
-    margin: 40px 0px;
-  }
-  
-  .ag-job-info p {
-    font-size: 14px;
-    font-weight: 300;
-    font-family: var(--theme-font-fam-secondary);
-    color: rgb(85, 85, 85);
-    margin: 0px 0px 40px 0px;
-  }
-  
-  .ag-job-info p span {
-    font-style: italic;
-    font-weight: 500;
-  }
-  
-  .ag-job-info table {
-    border: 0.1px solid var(--theme-color-teritary);
-    font-family: var(--theme-font-fam-secondary);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .ag-job-tHead {
-    background-color: var(--theme-color-teritary);
-    height: 70px;
-    color: var(--theme-color-primary);
-    font-family: var(--theme-font-fam-primary);
-  }
-  
-  .ag-job-tHead tr th {
-    font-weight: 300;
-    font-size: 14px;
-    text-transform: uppercase;
-  }
-  
-  td {
-    padding: 5px;
-    text-align: left;
-    font-size: 12px;
-  }
-  td strong {
-    font-size: 14px;
-  }
-  
-  .ag-job-form-container {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .ag-job-form {
-    width: 100%;
-    background-color: var(--theme-color-primary);
-    color: var(--theme-color-teritary);
-    border-radius: 10px;
-    border: 1px solid var(--theme-color-teritary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .ag-job-form h1 {
-    font-size: 24px;
-    font-weight: 300;
-    font-family: var(--theme-font-fam-primary);
-    color: var(--theme-color-teritary);
-    margin: 40px 0px;
-  }
-  
-  .ag-job-form form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    font-family: var(--theme-font-fam-secondary);
-  }
-  
-  /* Affiliate Program Form Label*/
-  .ag-job-form form label {
-    color: var(--theme-color-teritary);
-    font-size: 12px;
-  }
-  
-  /* Affiliate Program Form Input*/
-  .ag-job-form form input {
-    height: 40px;
-    border: none;
-    border-bottom: 1px solid var(--theme-color-teritary);
-    margin-bottom: 10px;
-    outline: none;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  /* Affiliate Program Form TextArea*/
-  .ag-job-form form textarea {
-    height: 40px;
-    border: none;
-    border-bottom: 1px solid var(--theme-color-teritary);
-    margin-bottom: 10px;
-    outline: none;
-    color: var(--theme-color-teritary);
-    font-family: "Poppins", sans-serif;
-    height: 110px;
-    margin-top: 5px;
-  }
-  
-  .ag-job-form form textarea::placeholder {
-    font-style: italic;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.ag-job-info {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .ag-job-form form select{
-    margin: 20px 0px 30px 0px;
-    height: 30px;
-    border: none;
-    outline: none;
-    background-color: #1834571f;
-    padding: 0px 20px 0px 0px ;
-    border-radius: 5px;
-    font-family: "Poppins";
-  }
-  
+.ag-job-info h1 {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-primary);
+  margin: 40px 0px;
+}
 
-  
-  /* Affiliate Program Form Button*/
-  .ag-job-form form .ag-job-submit-btn {
-    background-color: var(--theme-color-teritary);
-    color: var(--theme-color-primary);
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    font-size: 15px;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 400;
-    margin: 40px 0px;
-  }
-  
-  .additional-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .ag-Job-response-message {
-    color: green;
-    text-align: center;
-    font-size: 12px;
-    margin: 0px 0px 40px 0px;
-  }
-  
-  input[type="file"]::file-selector-button {
-    border: none;
-    background-color: var(--theme-color-teritary);
-    color: var(--theme-color-primary);
-    font-family: "Poppins", sans-serif;
-    padding: 3px 20px;
-    font-size: 10px;
-    align-items: center;
-    align-self: center;
-    align-content: center;
-    border-radius: 3px;
-    margin-top: 15px;
+.ag-job-info p {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-secondary);
+  color: rgb(85, 85, 85);
+  margin: 0px 0px 40px 0px;
+}
 
-  }
+.ag-job-info p span {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.ag-job-info table {
+  border: 0.1px solid var(--theme-color-teritary);
+  font-family: var(--theme-font-fam-secondary);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ag-job-tHead {
+  background-color: var(--theme-color-teritary);
+  height: 70px;
+  color: var(--theme-color-primary);
+  font-family: var(--theme-font-fam-primary);
+}
+
+.ag-job-tHead tr th {
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 5px;
+  text-align: left;
+  font-size: 12px;
+}
+td strong {
+  font-size: 14px;
+}
+
+/* Current Openings */
+
+.ag-current-openings-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ag-current-openings-container h1 {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-primary);
+  color: var(--theme-color-teritary);
+  margin: 40px 0px;
+}
+
+.ag-current-openings {
+  background-color: #18345741;
+  padding: 30px 30px;
+  margin-bottom: 20px;
+  margin: 0px 20px 20px 20px;
+  min-width: 250px;
+  border-radius: 5px;
+}
+
+.ag-current-openings-title {
+  margin: 10px 0px;
+  font-family: var(--theme-color-teritary);
+  font-size: 24px;
+  font-family: var(--theme-font-fam-primary);
+}
+
+.ag-current-openings-exper {
+  font-size: 12px !important;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-secondary);
+}
+
+.ag-current-openings-desp {
+  font-size: 14px;
+  margin-top: 20px;
+  font-family: var(--theme-font-fam-secondary);
+}
+
+#more1 {
+  display: none;
+}
+
+#more2 {
+  display: none;
+}
+#more3 {
+  display: none;
+}
+
+.desc-readmoreBtn {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Poppins";
+  color: green;
+}
+
+.ag-current-openings-apply-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  margin-top: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--theme-color-teritary);
+  color: white;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Jobs Form */
+
+.ag-job-form-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ag-job-form {
+  width: 100%;
+  background-color: var(--theme-color-primary);
+  color: var(--theme-color-teritary);
+  border-radius: 10px;
+  border: 1px solid var(--theme-color-teritary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ag-job-form h1 {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-primary);
+  color: var(--theme-color-teritary);
+  margin: 40px 0px;
+}
+
+.ag-job-form form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  font-family: var(--theme-font-fam-secondary);
+}
+
+/* Affiliate Program Form Label*/
+.ag-job-form form label {
+  color: var(--theme-color-teritary);
+  font-size: 12px;
+}
+
+/* Affiliate Program Form Input*/
+.ag-job-form form input {
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid var(--theme-color-teritary);
+  margin-bottom: 10px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Affiliate Program Form TextArea*/
+.ag-job-form form textarea {
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid var(--theme-color-teritary);
+  margin-bottom: 10px;
+  outline: none;
+  color: var(--theme-color-teritary);
+  font-family: "Poppins", sans-serif;
+  height: 110px;
+  margin-top: 5px;
+}
+
+.ag-job-form form textarea::placeholder {
+  font-style: italic;
+}
+
+.ag-job-form form select {
+  margin: 20px 0px 30px 0px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: #1834571f;
+  padding: 0px 20px 0px 0px;
+  border-radius: 5px;
+  font-family: "Poppins";
+}
+
+/* Affiliate Program Form Button*/
+.ag-job-form form .ag-job-submit-btn {
+  background-color: var(--theme-color-teritary);
+  color: var(--theme-color-primary);
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  margin: 40px 0px;
+}
+
+.additional-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ag-Job-response-message {
+  color: green;
+  text-align: center;
+  font-size: 12px;
+  margin: 0px 0px 40px 0px;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  background-color: var(--theme-color-teritary);
+  color: var(--theme-color-primary);
+  font-family: "Poppins", sans-serif;
+  padding: 3px 20px;
+  font-size: 10px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  border-radius: 3px;
+  margin-top: 15px;
+}
