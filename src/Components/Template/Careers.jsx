@@ -243,7 +243,7 @@ const JobsForm = () => {
               )}
 
               <button className="ag-job-submit-btn" type="submit">
-                Submit Here
+                Submit
               </button>
 
               {responseMessage && (
