@@ -126,7 +126,7 @@ const AffiliateProgram = () => {
               </button>
 
               {showAdditionalLinks && (
-                <div class="additional-links">
+                <div className="additional-links">
                   <label>Social Link 2 (Optional):</label>
                   <input
                     type="text"
