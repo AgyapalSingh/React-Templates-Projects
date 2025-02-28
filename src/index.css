@@ -70,15 +70,18 @@ header {
   text-align: center;
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  padding-left:5%;
 }
 
 .home-link a {
   text-decoration: none;
   color: var(--theme-color-teritary);
-  padding: 0px 10px;
-  border-left: 1px solid var(--theme-color-teritary);
-  border-right: 1px solid var(--theme-color-teritary);
+  font-size: 18px;
+  border: 1px solid var(--theme-color-teritary);
+  border-radius: 50%;
+  display: flex;
+  padding: 2px;
 }
 
 @media screen and (max-width: 1280px) {

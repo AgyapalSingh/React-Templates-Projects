@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { MdHome } from "react-icons/md";
 
 const Header = () => {
   return (
@@ -16,7 +17,9 @@ const Header = () => {
         </h1>
       </div>
       <div className="home-link">
-        <Link to="/">Back To Home</Link>
+        <Link to="/">
+          <MdHome />
+        </Link>
       </div>
     </header>
   );
