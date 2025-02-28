@@ -73,7 +73,7 @@ const AffiliateProgram = () => {
           <h1>Join our Affiliate program</h1>
           <p className="ag-affiliate-info-para">
             The AffiliateProgram component is a React-based form that allows
-            users to apply for an affiliate program. It collects user details
+            users to apply for an affiliate program for a <span>Skincare brand (Or You can use anywhere else.)</span>. It collects user details
             such as name, email, social media links, and a personal message
             explaining their interest. The form data is then submitted to{" "}
             <span> Google Sheets using the Google Sheets API </span> for easy
