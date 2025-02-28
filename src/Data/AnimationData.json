@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "title": "Tinted Sunscreen Launch Page",
+      "description": "Animation Using GSAP",
+      "description-2": "Tinted Sunscreen.",
+      "linkTo": "tinted-sunscreen-launch-page",
+      "img": "/imgs/Affliliate-project.png"
+    },
+    {
+      "id": 2,
+      "title": "Calming Moisturizer Launch Page",
+      "description": "Animation Using GSAP",
+      "description-2": "Calming Moisturizer.  ",
+      "linkTo": "careers-page",
+      "img": "/imgs/Affliliate-project.png"
+    }
+  ]
+  

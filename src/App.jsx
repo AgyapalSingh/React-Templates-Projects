@@ -7,6 +7,7 @@ import HomePage from "./Components/HomePage";
 import Careers from "./Components/Template/Careers";
 import Faqs from "./Components/Template/Faqs";
 import AffiliateProgram from "./Components/Template/AffiliateProgram";
+import TintedLaunchPage from "./Components/Animations/TintedLaunchPage";
 
 function App() {
   const [showTopButton, setShowTopButton] = useState(false);
@@ -37,6 +38,7 @@ function App() {
         <Route path="/affiliate-program-page" element={<AffiliateProgram />} />
         <Route path="/careers-page" element={<Careers />} />
         <Route path="/faqs-page" element={<Faqs/>} />
+        <Route path="/tinted-sunscreen-launch-page" element={<TintedLaunchPage/>} />
       </Routes>
       <Footer />
     </>
