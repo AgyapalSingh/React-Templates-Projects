@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef, use } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./TemplateCSS/Careers.css";
+import Jobs from "./../../Data/CurrentOpenings.json";
 
 const JobsForm = () => {
   const [formData, setFormData] = useState({
@@ -15,12 +16,22 @@ const JobsForm = () => {
   const formRef = useRef(null);
   const [readMoreJob1, setReadMoreJob1] = useState(false);
 
+  const [readMore, setReadMore] = useState({
+    Job1: false,
+    Job2: false,
+    Job3: false,
+  });
+
   useEffect(() => {
     setFormData((prev) => ({
       ...prev,
       date: new Date().toISOString().split("T")[0],
     }));
   }, []);
+
+  const handleReadMore = (job) => {
+    setReadMore((prev) => ({ ...prev, [job]: !prev[job] }));
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -149,92 +160,39 @@ const JobsForm = () => {
         <div className="ag-current-openings-container">
           <h1>Current Job Openings</h1>
           <div className="ag-current-openings-all">
-            <div className="ag-current-openings">
-              <h2 className="ag-current-openings-title">Job 1</h2>
-              <h5 className="ag-current-openings-exper">
-                Experience - 2-4 yrs
-              </h5>
-              <p className="ag-current-openings-desp">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus imperdiet, nulla et dictum interdum, nisi lorem
-                egestas vitae scel
-                <span id="dots1">...</span>
-                <span id="more1">
-                  erisque enim ligula venenatis dolor. Maecenas nisl est,
-                  ultrices nec congue eget, auctor vitae massa. Fusce luctus
-                  vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed
-                  ullamcorper ipsum dignissim ac. In at libero sed nunc
-                  venenatis imperdiet sed ornare turpis. Donec vitae dui eget
-                  tellus gravida venenatis. Integer fringilla congue eros non
-                  fermentum. Sed dapibus pulvinar nibh tempor porta.
-                </span>
-              </p>
-
-              <button id="Job1" className="desc-readmoreBtn">
-                Read more...
-              </button>
-              <a href="#ag-jobs-form" className="ag-current-openings-apply-btn">
-                Apply
-              </a>
-            </div>
-
-            <div className="ag-current-openings">
-              <h2 className="ag-current-openings-title">Job 2</h2>
-              <h5 className="ag-current-openings-exper">
-                Experience - 2-4 yrs
-              </h5>
-              <p className="ag-current-openings-desp">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus imperdiet, nulla et dictum interdum, nisi lorem
-                egestas vitae scel
-                <span id="dots2">...</span>
-                <span id="more2">
-                  erisque enim ligula venenatis dolor. Maecenas nisl est,
-                  ultrices nec congue eget, auctor vitae massa. Fusce luctus
-                  vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed
-                  ullamcorper ipsum dignissim ac. In at libero sed nunc
-                  venenatis imperdiet sed ornare turpis. Donec vitae dui eget
-                  tellus gravida venenatis. Integer fringilla congue eros non
-                  fermentum. Sed dapibus pulvinar nibh tempor porta.
-                </span>
-              </p>
-
-              <button id="Job1" className="desc-readmoreBtn">
-                Read more...
-              </button>
-              <a href="#ag-jobs-form" className="ag-current-openings-apply-btn">
-                Apply
-              </a>
-            </div>
-
-            <div className="ag-current-openings">
-              <h2 className="ag-current-openings-title">Job 3</h2>
-              <h5 className="ag-current-openings-exper">
-                Experience - 2-4 yrs
-              </h5>
-              <p className="ag-current-openings-desp">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus imperdiet, nulla et dictum interdum, nisi lorem
-                egestas vitae scel
-                <span id="dots3">...</span>
-                <span id="more3">
-                  erisque enim ligula venenatis dolor. Maecenas nisl est,
-                  ultrices nec congue eget, auctor vitae massa. Fusce luctus
-                  vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed
-                  ullamcorper ipsum dignissim ac. In at libero sed nunc
-                  venenatis imperdiet sed ornare turpis. Donec vitae dui eget
-                  tellus gravida venenatis. Integer fringilla congue eros non
-                  fermentum. Sed dapibus pulvinar nibh tempor porta.
-                </span>
-              </p>
-
-              <button id="Job1" className="desc-readmoreBtn">
-                Read more...
-              </button>
-              <a href="#ag-jobs-form" className="ag-current-openings-apply-btn">
-                Apply
-              </a>
-            </div>
+            {Jobs.map((job) => (
+              <div key={job.id} className="ag-current-openings">
+                <h2 className="ag-current-openings-title">{job.title}</h2>
+                <h5 className="ag-current-openings-exper">
+                  Experience - {job.experience}
+                </h5>
+                <p className="ag-current-openings-desp">
+                  {job.description}
+                  <span
+                    style={{ display: readMore[job.id] ? "none" : "inline" }}
+                  >
+                    ...
+                  </span>
+                  <span
+                    style={{ display: readMore[job.id] ? "inline" : "none" }}
+                  >
+                    {job.description2}
+                  </span>
+                </p>
+                <button
+                  onClick={() => handleReadMore(job.id)}
+                  className="desc-readmoreBtn"
+                >
+                  {readMore[job.id] ? "Read Less" : "Read More"}
+                </button>
+                <a
+                  href="#ag-jobs-form"
+                  className="ag-current-openings-apply-btn"
+                >
+                  Apply
+                </a>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -262,10 +220,13 @@ const JobsForm = () => {
               <textarea name="message" onChange={handleInputChange}></textarea>
 
               <label>Choose a job:</label>
-              <select name="jobname" onChange={handleInputChange}>
-                <option value="Job1">Job 1</option>
-                <option value="Job2">Job 2</option>
-                <option value="Job3">Job 3</option>
+              <select name="jobname" onChange={handleInputChange} required>
+                <option value="" defaultValue>
+                  Please Select Your Job
+                </option>
+                <option value="Job 1">Job 1</option>
+                <option value="Job 2">Job 2</option>
+                <option value="Job 3">Job 3</option>
               </select>
 
               <label>Upload Resume (PDF, JPEG, JPG):</label>
