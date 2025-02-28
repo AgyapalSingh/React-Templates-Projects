@@ -1,0 +1,180 @@
+/* Affiliate Program Page */
+
+.ag-affiliate-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ag-affiliate-info {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ag-affiliate-info h1 {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-primary);
+  margin: 40px 0px;
+}
+
+.ag-affiliate-info p {
+  font-size: 14px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-secondary);
+  color: rgb(85, 85, 85);
+  margin: 0px 0px 40px 0px;
+}
+
+.ag-affiliate-info p span {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.ag-affiliate-info table {
+  border: 0.1px solid var(--theme-color-teritary);
+  font-family: var(--theme-font-fam-secondary);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ag-affiliate-tHead {
+  background-color: var(--theme-color-teritary);
+  height: 70px;
+  color: var(--theme-color-primary);
+  font-family: var(--theme-font-fam-primary);
+}
+
+.ag-affiliate-tHead tr th {
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 5px;
+  text-align: left;
+  font-size: 12px;
+}
+td strong {
+  font-size: 14px;
+}
+
+.ag-affiliate-form-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ag-affiliate-form {
+  width: 100%;
+  background-color: var(--theme-color-teritary);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ag-affiliate-form h1 {
+  font-size: 24px;
+  font-weight: 300;
+  font-family: var(--theme-font-fam-primary);
+  color: var(--theme-color-primary);
+  margin: 40px 0px;
+}
+
+.ag-affiliate-form form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  font-family: var(--theme-font-fam-secondary);
+}
+
+/* Affiliate Program Form Label*/
+.ag-affiliate-form form label {
+  color: white;
+  font-size: 12px;
+}
+
+/* Affiliate Program Form Input*/
+.ag-affiliate-form form input {
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 10px;
+  background-color: var(--theme-color-teritary);
+  outline: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Affiliate Program Form TextArea*/
+.ag-affiliate-form form textarea {
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 10px;
+  background-color: #183457;
+  outline: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  height: 110px;
+  margin-top: 5px;
+}
+
+.ag-affiliate-form form textarea::placeholder {
+  font-style: italic;
+}
+
+.add-more-links {
+  width: 100px;
+  height: 20px;
+  background-color: #ffffff;
+  color: #183457;
+  border: none;
+  border-radius: 3px;
+  font-size: 10px;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 20px 0px;
+}
+
+/* Affiliate Program Form Button*/
+.ag-affiliate-form form .ag-affiliate-submit-btn {
+  background-color: #ffffff;
+  color: #183457;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  margin: 40px 0px;
+}
+
+.additional-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ag-formResponse-message {
+  color: green;
+  text-align: center;
+  font-size: 12px;
+  margin: 0px 0px 40px 0px;
+}
