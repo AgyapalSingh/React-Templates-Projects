@@ -40,19 +40,19 @@ const HomePage = () => {
       </section>
 
 
-      <h1 className="ag-template-title">List of Animations</h1>
+      <h1 className="ag-animation-title">List of Animations</h1>
 
 
-      <section className="ag-template-section">
-        <div className="ag-template-card-container">
+      <section className="ag-animation-section">
+        <div className="ag-animation-card-container">
           {animationData.map((item, index) => (
-            <div className="ag-template-card" key={index}>
-              <div className="ag-template-card-image">
+            <div className="ag-animation-card" key={index}>
+              <div className="ag-animation-card-image">
                 {item.img && <img src={item.img} alt={item.title} />}
               </div>
 
-              <div className="ag-template-card-content">
-                <div className="ag-template-card-info">
+              <div className="ag-animation-card-content">
+                <div className="ag-animation-card-info">
                   <h1>{item.title}</h1>
                   <span>
                   {item["description"]}
@@ -64,9 +64,9 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="ag-template-card-btn">
+              <div className="ag-animation-card-btn">
                 <Link to={`/${item.linkTo}`}>
-                  <p>View Template</p>
+                  <p>View Animation</p>
                 </Link>
               </div>
             </div>
