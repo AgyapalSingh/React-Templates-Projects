@@ -242,7 +242,7 @@ const [formResponseColor, setFormResponseColor] = useState("green");
                     onClick={handleNext}
                     className="ag-affiliate-next-step-btn"
                   >
-                    Next{" "}
+                    Next &gt;
                   </button>
                 </div>
               )}
@@ -362,7 +362,7 @@ const [formResponseColor, setFormResponseColor] = useState("green");
                     onClick={handlePrev}
                     className="ag-affiliate-prev-step-btn"
                   >
-                    Previous
+                    &lt; Previous 
                   </button>
 
                   <button className="ag-affiliate-submit-btn" type="submit">
