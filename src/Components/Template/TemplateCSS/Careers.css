@@ -16,6 +16,12 @@
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 1280px) {
+  .ag-job-info {
+    width: 60%;
+  }
+}
+
 .ag-job-info h1 {
   font-size: 24px;
   font-weight: 300;
@@ -41,6 +47,7 @@
   font-family: var(--theme-font-fam-secondary);
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
 }
 
 .ag-job-tHead {
@@ -68,12 +75,30 @@ td strong {
 /* Current Openings */
 
 .ag-current-openings-container {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+  width: 90%;
+}
+
+@media screen and (min-width: 1280px) {
+  .ag-current-openings-container {
+    width: 60%;
+  }
+
+  .ag-current-openings-all {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .ag-current-openings {
+    max-width: 300px;
+  }
 }
 
 .ag-current-openings-container h1 {
@@ -158,6 +183,12 @@ td strong {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 1280px) {
+  .ag-job-form-container {
+    width: 60%;
+  }
 }
 
 .ag-job-form {
