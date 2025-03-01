@@ -109,13 +109,14 @@ td strong {
   border-radius: 5px;
   font-family: "Poppins";
   color: white;
-  border: 1px solid white;
+  color: rgb(216, 216, 216);
+  border: 1px solid rgb(216, 216, 216);;
 }
 
 .ag-affiliate-form form select > option {
   width: 20%;
-  background-color: #1834571f;
-  color: #183457;
+  background-color: #1834571f !important;
+  color: #183457 !important;
 }
 
 .ag-affiliate-prev-step-btn , .ag-affiliate-next-step-btn{
@@ -177,6 +178,7 @@ td strong {
   background-color: var(--theme-color-teritary);
   outline: none;
   color: white;
+  color: rgb(216, 216, 216);
   font-family: "Poppins", sans-serif;
 }
 
@@ -189,6 +191,7 @@ td strong {
   background-color: #183457;
   outline: none;
   color: white;
+  color: rgb(216, 216, 216);
   font-family: "Poppins", sans-serif;
   height: 110px;
   margin-top: 5px;
