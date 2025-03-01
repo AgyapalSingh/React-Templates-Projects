@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import "./TemplateCSS/AffiliateProgram.css"
+import "./TemplateCSS/AffiliateProgram.css";
 
 const AffiliateProgram = () => {
+  const [step, setStep] = useState(1);
+const [formResponseColor, setFormResponseColor] = useState("green");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,7 +11,14 @@ const AffiliateProgram = () => {
     social2: "",
     social3: "",
     message: "",
-    date: "",
+    followers: "",
+    influencerCategory: "",
+    monthlyReach: "",
+    avgLikes: "",
+    avgComments: "",
+    avgShares: "",
+    howYouHear: "",
+    date: new Date().toISOString().split("T")[0],
   });
 
   const [showAdditionalLinks, setShowAdditionalLinks] = useState(false);
@@ -23,20 +32,43 @@ const AffiliateProgram = () => {
     });
   };
 
+  const validateStep1 = () => {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.social1 ||
+      !formData.message
+    ) {
+      setFormResponse("Please fill in all required fields before proceeding.");
+      setFormResponseColor("red");
+      setTimeout(() => {
+        setFormResponse("");
+        setFormResponseColor("green"); // Reset to green after hiding
+      }, 2000);
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleNext = () => {
+    if (validateStep1()) {
+      setStep(2);
+    }
+  };
+
+  const handlePrev = () => {
+    setStep(1);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormResponse("Submitting your response, please wait...");
 
-    const { name, email, social1, social2, social3, message } = formData;
-    const currentDate = new Date().toISOString().split("T")[0];
     const formDataToSend = new FormData();
-    formDataToSend.append("name", name);
-    formDataToSend.append("email", email);
-    formDataToSend.append("message", message);
-    formDataToSend.append("social1", social1);
-    formDataToSend.append("social2", social2);
-    formDataToSend.append("social3", social3);
-    formDataToSend.append("date", currentDate);
+    Object.entries(formData).forEach(([key, value]) => {
+      formDataToSend.append(key, value);
+    });
 
     try {
       const response = await fetch(
@@ -56,9 +88,17 @@ const AffiliateProgram = () => {
           social2: "",
           social3: "",
           message: "",
+          followers: "",
+          influencerCategory: "",
+          monthlyReach: "",
+          avgLikes: "",
+          avgComments: "",
+          avgShares: "",
+          howYouHear: "",
         });
         setShowAdditionalLinks(false);
-        setTimeout(() => setFormResponse(""), 2000);
+        setTimeout(() => setFormResponse(""), 1000);
+        setStep(1);
       } else {
         throw new Error(data.message || "Submission failed");
       }
@@ -74,9 +114,11 @@ const AffiliateProgram = () => {
           <h1>Join our Affiliate program</h1>
           <p className="ag-affiliate-info-para">
             The AffiliateProgram component is a React-based form that allows
-            users to apply for an affiliate program for a <span>Skincare brand (Or You can use anywhere else.)</span>. It collects user details
-            such as name, email, social media links, and a personal message
-            explaining their interest. The form data is then submitted to{" "}
+            users to apply for an affiliate program for a{" "}
+            <span>Skincare brand (Or You can use anywhere else.)</span>. It
+            collects user details such as name, email, social media links, and a
+            personal message explaining their interest. The form data is then
+            submitted to{" "}
             <span> Google Sheets using the Google Sheets API </span> for easy
             tracking and management.
           </p>
@@ -134,79 +176,206 @@ const AffiliateProgram = () => {
           <div className="ag-affiliate-form">
             <h1>Affiliate Program</h1>
             <form onSubmit={handleSubmit}>
-              <label>Name:</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-
-              <label>Email:</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-
-              <label>Social Link 1:</label>
-              <input
-                type="text"
-                name="social1"
-                value={formData.social1}
-                onChange={handleChange}
-                required
-              />
-
-              <button
-                type="button"
-                className="add-more-links"
-                onClick={() => setShowAdditionalLinks(!showAdditionalLinks)}
-              >
-                {showAdditionalLinks ? "Remove Links" : "Add More Links"}
-              </button>
-
-              {showAdditionalLinks && (
-                <div className="additional-links">
-                  <label>Social Link 2 (Optional):</label>
+              {step === 1 && (
+                <div className="ag-affiliate-step-1 ag-affiliate-step">
+                  <label>Name:</label>
                   <input
                     type="text"
-                    name="social2"
-                    value={formData.social2}
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
+                    required
                   />
-
-                  <label>Social Link 3 (Optional):</label>
+                  <label>Email:</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <label>Social Link 1:</label>
                   <input
                     type="text"
-                    name="social3"
-                    value={formData.social3}
+                    name="social1"
+                    value={formData.social1}
                     onChange={handleChange}
+                    required
                   />
+                  <button
+                    type="button"
+                    className="add-more-links"
+                    onClick={() => setShowAdditionalLinks(!showAdditionalLinks)}
+                  >
+                    {showAdditionalLinks ? "Remove Links" : "Add More Links"}
+                  </button>
+                  {showAdditionalLinks && (
+                    <div className="additional-links">
+                      <label>Social Link 2 (Optional):</label>
+                      <input
+                        type="text"
+                        name="social2"
+                        value={formData.social2}
+                        onChange={handleChange}
+                      />
+
+                      <label>Social Link 3 (Optional):</label>
+                      <input
+                        type="text"
+                        name="social3"
+                        value={formData.social3}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  )}
+                  <label>Why work with us?</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    placeholder="Tell us why you'd like to join..."
+                  />
+                  <input type="hidden" name="date" value={formData.date} />\
+                  <button
+                    type="button"
+                    onClick={handleNext}
+                    className="ag-affiliate-next-step-btn"
+                  >
+                    Next{" "}
+                  </button>
                 </div>
               )}
 
-              <label>Why work with us?</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder="Tell us why you'd like to join..."
-              />
+              {step === 2 && (
+                <div className="ag-affiliate-step-2 ag-affiliate-step">
+                  <label>How Many Followers Do You Have ?</label>
+                  <select
+                    id="followers"
+                    name="followers"
+                    value={formData.followers}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">-</option>
+                    <option value="0 < 5,000">0 &lt; 5,000</option>
+                    <option value="5,000 < 10,000">5,000 &lt; 10,000</option>
+                    <option value="10,000 < 50,000">10,000 &lt; 50,000</option>
+                    <option value="50,000 < 100,000">
+                      50,000 &lt; 100,000
+                    </option>
+                    <option value="100,000 +">100,000 +</option>
+                  </select>
 
-              <input type="hidden" name="date" value={formData.date} />
+                  <label>What category do you belong ?</label>
+                  <select
+                    id="influencerCategory"
+                    name="influencerCategory"
+                    value={formData.influencerCategory}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">-</option>
+                    <option value="Beauty & Fashion">Beauty & Fashion</option>
+                    <option value="Food & Cooking">Food & Cooking</option>
+                    <option value="Health & Wellness">Health & Wellness</option>
+                    <option value="Travel & Adventure">
+                      Travel & Adventure
+                    </option>
+                    <option value="Parenting & Family">
+                      Parenting & Family
+                    </option>
+                    <option value="Lifestyles & Home Decor">
+                      Lifestyles & Home Decor
+                    </option>
+                    <option value="Tech & Gadgets">Tech & Gadgets</option>
+                  </select>
 
-              <button className="ag-affiliate-submit-btn" type="submit">
-                Submit
-              </button>
+                  <label>Monthly Reach ?</label>
+                  <select
+                    id="monthlyReach"
+                    name="monthlyReach"
+                    value={formData.monthlyReach}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">-</option>
+                    <option value="0 < 5,000">0 &lt; 5,000</option>
+                    <option value="5,000 < 10,000">5,000 &lt; 10,000</option>
+                    <option value="10,000 < 50,000">10,000 &lt; 50,000</option>
+                    <option value="50,000 < 100,000">
+                      50,000 &lt; 100,000
+                    </option>
+                    <option value="100,000 +">100,000 +</option>
+                  </select>
 
-              {formResponse && (
-                <p className="ag-formResponse-message">{formResponse}</p>
+                  <label>
+                    Average Post Likes <i>(Optional)</i>:
+                  </label>
+                  <input
+                    type="number"
+                    id="avgLikes"
+                    name="avgLikes"
+                    value={formData.avgLikes}
+                    onChange={handleChange}
+                  />
+
+                  <label>
+                    Average Post Comments <i>(Optional)</i>:
+                  </label>
+                  <input
+                    type="number"
+                    id="avgComments"
+                    name="avgComments"
+                    value={formData.avgComments}
+                    onChange={handleChange}
+                  />
+
+                  <label>
+                    Average Post Shares <i>(Optional)</i>:
+                  </label>
+                  <input
+                    type="number"
+                    id="avgShares"
+                    name="avgShares"
+                    value={formData.avgShares}
+                    onChange={handleChange}
+                  />
+
+                  <label>How did you hear about us ? </label>
+                  <select
+                    id="howYouHear"
+                    name="howYouHear"
+                    value={formData.howYouHear}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">-</option>
+                    <option value="Social Media">Social Media</option>
+                    <option value="Website">Website</option>
+                  </select>
+
+                  <input type="hidden" id="date" name="date" />
+
+                  <button
+                    type="button"
+                    onClick={handlePrev}
+                    className="ag-affiliate-prev-step-btn"
+                  >
+                    Previous
+                  </button>
+
+                  <button className="ag-affiliate-submit-btn" type="submit">
+                    Submit
+                  </button>
+                </div>
               )}
+
+              <div className="ag-response-div">
+                {formResponse && (
+                  <p className="ag-formResponse-message" style={{ color: formResponseColor }}>{formResponse}</p>
+                )}
+              </div>
             </form>
           </div>
         </div>
