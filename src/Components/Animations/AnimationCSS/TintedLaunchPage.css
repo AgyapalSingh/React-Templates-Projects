@@ -1,32 +1,47 @@
-.ag-launch-page-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.ag-launch-page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-
-.ag-launch-page-title{
-    height: 150vh;
-    border: 1px solid red;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-    justify-content: center;
+.ag-launch-page-title {
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.ag-launch-title-part{
-    height: 20vh;
-    border: 1px solid red;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.ag-launch-title-part {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
 }
 
-.ag-launch-title-part h1{
-    font-size: 75px;
-    font-family: var(--theme-font-fam-primary);
-    font-weight: 300;
+.ag-launch-title-part h1 {
+  font-size: 75px;
+  font-family: var(--theme-font-fam-primary);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.title-part-Hook-1 {
+  z-index: 10;
+}
+
+.title-part-Hook-2 {
+  opacity: 0;
+}
+
+.title-part-Hook-3 {
+  opacity: 0;
+}
+.title-part-Hook-4 {
+  opacity: 0;
 }
