@@ -9,6 +9,7 @@ import Faqs from "./Components/Template/Faqs";
 import AffiliateProgram from "./Components/Template/AffiliateProgram";
 import TintedLaunchPage from "./Components/Animations/TintedLaunchPage";
 import CalmingMoisturizerLaunchPage from "./Components/Animations/CalmingMoisturizerLaunchPage";
+import AutoScrollToTop from "./Snippit/AutoScrollToTop";
 
 function App() {
   const [showTopButton, setShowTopButton] = useState(false);
@@ -34,14 +35,25 @@ function App() {
         </button>
       )}
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/affiliate-program-page" element={<AffiliateProgram />} />
-        <Route path="/careers-page" element={<Careers />} />
-        <Route path="/faqs-page" element={<Faqs/>} />
-        <Route path="/tinted-sunscreen-launch-page" element={<TintedLaunchPage/>} />
-        <Route path="/calming-moisturizer-launch-page" element={<CalmingMoisturizerLaunchPage/>} />
-      </Routes>
+      <AutoScrollToTop>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/affiliate-program-page"
+            element={<AffiliateProgram />}
+          />
+          <Route path="/careers-page" element={<Careers />} />
+          <Route path="/faqs-page" element={<Faqs />} />
+          <Route
+            path="/tinted-sunscreen-launch-page"
+            element={<TintedLaunchPage />}
+          />
+          <Route
+            path="/calming-moisturizer-launch-page"
+            element={<CalmingMoisturizerLaunchPage />}
+          />
+        </Routes>
+      </AutoScrollToTop>
       <Footer />
     </>
   );
