@@ -7,20 +7,16 @@ const JobsForm = () => {
     name: "",
     email: "",
     message: "",
-    jobname: "Job1",
+    jobname: "",
     file: null,
     date: "",
   });
+
   const [fileError, setFileError] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
   const formRef = useRef(null);
-  const [readMoreJob1, setReadMoreJob1] = useState(false);
-
-  const [readMore, setReadMore] = useState({
-    Job1: false,
-    Job2: false,
-    Job3: false,
-  });
+  const jobSelectRef = useRef(null);
+  const [readMore, setReadMore] = useState({});
 
   useEffect(() => {
     setFormData((prev) => ({
@@ -29,8 +25,24 @@ const JobsForm = () => {
     }));
   }, []);
 
-  const handleReadMore = (job) => {
-    setReadMore((prev) => ({ ...prev, [job]: !prev[job] }));
+  const handleReadMore = (jobId) => {
+    setReadMore((prev) => ({ ...prev, [jobId]: !prev[jobId] }));
+  };
+
+  const handleApply = (jobTitle) => {
+    setFormData((prev) => ({
+      ...prev,
+      jobname: jobTitle,
+    }));
+
+    document
+      .getElementById("ag-Form-Section")
+      .scrollIntoView({ behavior: "smooth" });
+
+    if (jobSelectRef.current) {
+      jobSelectRef.current.style.border = "3px solid #183457";
+      setTimeout(() => (jobSelectRef.current.style.border = ""), 2000);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -107,7 +119,7 @@ const JobsForm = () => {
             tracking and management.
           </p>
 
-          <table border="1" cellPadding="10" cellSpacing="0">
+          <table border="1" cellSpacing="0" cellPadding="10">
             <thead className="ag-job-tHead">
               <tr>
                 <th>Feature</th>
@@ -117,40 +129,71 @@ const JobsForm = () => {
             <tbody>
               <tr>
                 <td>
+                  <strong>Job Listing & Apply Button</strong>
+                </td>
+                <td>
+                  Displays job openings from a JSON data source. <br></br> Users can click
+                  "Apply Here" to auto-fill the form and scroll to the
+                  application section.
+                </td>
+              </tr>
+              <tr>
+                <td>
                   <strong>Google Sheets Integration</strong>
                 </td>
                 <td>
-                  Submits form data directly to Google Sheets via the Google
-                  Sheets API.
+                  Submits job application details directly to Google Sheets for
+                  tracking and management.
                 </td>
               </tr>
               <tr>
                 <td>
-                  <strong>Dynamic Input Fields</strong>
+                  <strong>Google Drive File Upload</strong>
                 </td>
-                <td>Users can add or remove extra social media links.</td>
+                <td>
+                  Uploads resume files (PDF, JPEG, JPG) to Google Drive and
+                  stores the file link in Google Sheets.
+                </td>
               </tr>
               <tr>
                 <td>
-                  <strong>Real-Time Feedback</strong>
+                  <strong>Auto selection of Job, Scroll & Highlighting</strong>
                 </td>
                 <td>
-                  Displays submission status messages for better user
-                  experience.
+                  Clicking "Apply Here" smoothly scrolls to the form and
+                  highlights the job dropdown for visibility.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Read More Toggle</strong>
+                </td>
+                <td>
+                  Expands or collapses job descriptions for better readability.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Real-time Validation</strong>
+                </td>
+                <td>
+                  Ensures the file size does not exceed 5MB and provides
+                  feedback on submission status.
                 </td>
               </tr>
               <tr>
                 <td>
                   <strong>Automatic Date Logging</strong>
                 </td>
-                <td>Captures the submission date automatically.</td>
+                <td>Automatically records the application submission date.</td>
               </tr>
               <tr>
                 <td>
-                  <strong>Error Handling</strong>
+                  <strong>Error Handling & Feedback</strong>
                 </td>
                 <td>
-                  Provides appropriate feedback in case of submission failure.
+                  Displays success, failure, or file size error messages for a
+                  better user experience.
                 </td>
               </tr>
             </tbody>
@@ -161,7 +204,7 @@ const JobsForm = () => {
           <h1>Current Job Openings</h1>
           <div className="ag-current-openings-all">
             {Jobs.map((job) => (
-              <div key={job.id} className="ag-current-openings">
+              <div key={job.id} className="ag-current-openings ">
                 <h2 className="ag-current-openings-title">{job.title}</h2>
                 <h5 className="ag-current-openings-exper">
                   Experience - {job.experience}
@@ -186,8 +229,9 @@ const JobsForm = () => {
                   {readMore[job.id] ? "Read Less" : "Read More"}
                 </button>
                 <a
-                  href="#ag-jobs-form"
-                  className="ag-current-openings-apply-btn"
+                  href="#ag-Form-Section"
+                  className="ag-current-openings-apply-btn "
+                  onClick={() => handleApply(job.title)}
                 >
                   Apply Here
                 </a>
@@ -196,7 +240,7 @@ const JobsForm = () => {
           </div>
         </div>
 
-        <div id="ag-jobs-form" className="ag-job-form-container">
+        <div id="ag-Form-Section" className="ag-job-form-container">
           <div className="ag-job-form">
             <h1>Connect With Us</h1>
             <form ref={formRef} onSubmit={handleSubmit}>
@@ -220,13 +264,20 @@ const JobsForm = () => {
               <textarea name="message" onChange={handleInputChange}></textarea>
 
               <label>Choose a job:</label>
-              <select name="jobname" onChange={handleInputChange} required>
-                <option value="" defaultValue>
-                  Please Select Your Job
-                </option>
-                <option value="Job 1">Job 1</option>
-                <option value="Job 2">Job 2</option>
-                <option value="Job 3">Job 3</option>
+              <select
+                id="jobname"
+                name="jobname"
+                onChange={handleInputChange}
+                value={formData.jobname}
+                ref={jobSelectRef}
+                required
+              >
+                <option value="">Please Select Your Job</option>
+                {Jobs.map((job) => (
+                  <option key={job.id} value={job.title}>
+                    {job.title}
+                  </option>
+                ))}
               </select>
 
               <label>Upload Resume (PDF, JPEG, JPG):</label>
