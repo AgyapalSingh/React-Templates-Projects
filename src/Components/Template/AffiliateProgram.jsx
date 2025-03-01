@@ -236,7 +236,7 @@ const [formResponseColor, setFormResponseColor] = useState("green");
                     required
                     placeholder="Tell us why you'd like to join..."
                   />
-                  <input type="hidden" name="date" value={formData.date} />\
+                  <input type="hidden" name="date" value={formData.date} />
                   <button
                     type="button"
                     onClick={handleNext}
