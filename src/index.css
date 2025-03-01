@@ -176,7 +176,6 @@ footer {
   align-items: center;
   margin-top: 130px;
   margin-bottom: 100px;
-  border-top: 1px solid var(--theme-color-hover);
 }
 
 .ag-template-title {
