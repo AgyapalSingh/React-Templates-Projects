@@ -16,6 +16,12 @@
   margin-bottom: 20px;
 }
 
+@media screen and (min-width: 1280px) {
+  .ag-affiliate-info {
+    width: 60%;
+  }
+}
+
 .ag-affiliate-info h1 {
   font-size: 24px;
   font-weight: 300;
@@ -41,6 +47,7 @@
   font-family: var(--theme-font-fam-secondary);
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
 }
 
 .ag-affiliate-tHead {
@@ -72,6 +79,12 @@ td strong {
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 1280px) {
+  .ag-affiliate-form-container {
+    width: 60%;
+  }
 }
 
 .ag-affiliate-form {
