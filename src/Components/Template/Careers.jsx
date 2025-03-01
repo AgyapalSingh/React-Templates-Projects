@@ -106,8 +106,8 @@ const JobsForm = () => {
           <h1>Join Our Perfect Team</h1>
           <p className="ag-job-info-para">
             The Careers component is a React-based form that allows users to
-            apply for Jobs for a
-            <span>Skincare brand (Or You can use anywhere else.)</span>. It
+            apply for Jobs for a 
+            <span> Skincare brand (Or You can use anywhere else.)</span>. It
             collects user details such as name, email, resume{" "}
             <span>
               (Uploaded to Google Drive using Drive Api and the link generated
