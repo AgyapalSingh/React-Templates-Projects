@@ -12,6 +12,20 @@
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border: none !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #183457a2;
+  cursor: pointer;
+}
+
 :root {
   --theme-font-fam-primary: "Montserrat", serif;
   --theme-font-fam-secondary: "Poppins", serif;
