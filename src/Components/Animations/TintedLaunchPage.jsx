@@ -81,6 +81,7 @@ const TintedLaunchPage = () => {
       });
   }, []);
 
+  // Canvas 1
   const canvasRef = useRef(null);
   const [images, setImages] = useState([]);
   const frames = useRef({ currentIndex: 0, maxIndex: 65 });
@@ -153,6 +154,84 @@ const TintedLaunchPage = () => {
     });
   };
 
+
+
+
+
+
+  // Canvas 2
+  const canvasRef_2 = useRef(null);
+  const [images_2, setImages_2] = useState([]);
+  const frames_2 = useRef({ currentIndex_2: 0, maxIndex_2: 65 });
+
+  useEffect(() => {
+    const preloadImages_2 = async () => {
+      let loadedImages_2 = [];
+      let imagesLoaded_2 = 0;
+
+      for (let i = 0; i < frames_2.current.maxIndex_2; i++) {
+        const imageUrl_2 = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
+          .toString()
+          .padStart(3, "0")}.png?v=1737009142`;
+
+        const img_2 = new Image();
+        img_2.src = imageUrl_2;
+        img_2.onload = () => {
+          imagesLoaded_2++;
+          if (imagesLoaded_2 === frames_2.current.maxIndex_2) {
+            setImages_2(loadedImages_2);
+          }
+        };
+        loadedImages_2.push(img_2);
+      }
+    };
+
+    preloadImages_2();
+  }, []);
+
+  useEffect(() => {
+    if (images_2.length === frames_2.current.maxIndex_2) {
+      loadImage_2(0);
+      startAnimation_2();
+    }
+  }, [images_2]);
+
+  const loadImage_2 = (index) => {
+    if (!canvasRef_2.current || index < 0 || index >= frames_2.current.maxIndex_2)
+      return;
+    const ctx_2 = canvasRef_2.current.getContext("2d");
+    const img_2 = images_2[index];
+    if (!img_2) return;
+
+    canvasRef_2.current.width = 300;
+    canvasRef_2.current.height = 500;
+    const scaleX_2 = canvasRef_2.current.width / img_2.width;
+    const scaleY_2 = canvasRef_2.current.height / img_2.height;
+    const scale_2 = Math.max(scaleX_2, scaleY_2);
+    const newWidth_2 = img_2.width * scale_2;
+    const newHeight_2 = img_2.height * scale_2;
+    const offsetX_2 = (canvasRef_2.current.width - newWidth_2) / 2;
+    const offsetY_2 = (canvasRef_2.current.height - newHeight_2) / 2;
+
+    ctx_2.clearRect(0, 0, canvasRef_2.current.width, canvasRef_2.current.height);
+    ctx_2.imageSmoothingEnabled = true;
+    ctx_2.imageSmoothingQuality = "high";
+    ctx_2.drawImage(img_2, offsetX_2, offsetY_2, 300, 500);
+  };
+
+  const startAnimation_2 = () => {
+    gsap.to(frames_2.current, {
+      currentIndex_2: frames_2.current.maxIndex_2 - 1,
+      scrollTrigger: {
+        trigger: ".ag-product-animation-canvas-div-2",
+        start: "top 45%",
+        end: "top 10%",
+        scrub: 1,
+      },
+      onUpdate: () => loadImage_2(Math.floor(frames_2.current.currentIndex_2)),
+    });
+  };
+
   return (
     <main className="ag-tempalte-container">
       <section className="ag-launch-page-container">
@@ -175,12 +254,23 @@ const TintedLaunchPage = () => {
         </div>
 
         <div className="ag-animation-1">
-          <h1>Animation For Title - 2</h1>
+          <h1>Animation 1</h1>
         </div>
 
         <div className="ag-product-animation-container-m-1">
           <div className="ag-product-animation-canvas-div-1">
             <canvas ref={canvasRef} id="ag-product-animation-canvas-1"></canvas>
+          </div>
+        </div>
+
+
+        <div className="ag-animation-2">
+          <h1>Animation 2</h1>
+        </div>
+
+        <div className="ag-product-animation-container-m-2">
+          <div className="ag-product-animation-canvas-div-2">
+            <canvas ref={canvasRef_2} id="ag-product-animation-canvas-2"></canvas>
           </div>
         </div>
       </section>
