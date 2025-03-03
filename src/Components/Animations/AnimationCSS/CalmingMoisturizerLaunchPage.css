@@ -1,162 +1,184 @@
 .ag-launch-page-container-cm {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .ag-launch-page-title-cm {
-    height: 150vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: -1;
-  }
-  
-  .ag-launch-title-part-cm {
-    height: 20vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-  }
-  
-  .ag-launch-title-part-cm h1 {
-    font-size: 75px;
-    font-family: var(--theme-font-fam-primary);
-    font-weight: 300;
-    text-transform: uppercase;
-  }
-  
-  .title-part-Hook-1-cm {
-    z-index: 10;
-  }
-  
-  .title-part-Hook-2-cm {
-    opacity: 0;
-  }
-  
-  .title-part-Hook-3-cm {
-    opacity: 0;
-  }
-  .title-part-Hook-4-cm {
-    opacity: 0;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-  
+/* 1. Title Div */
+.calm_product-title_m {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
 
+.calm_left-title_m {
+  width: 50%;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
 
-  
-  /* Canvas 1 */
-  
-  .ag-product-animation-container-m-1-cm{
-    height: 150vh;
-    display: flex;
-    justify-content: center;
-  }
-  
-  #ag-product-animation-canvas-1-cm{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 15%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    padding: 15% 0%;
-  }
-  
+.calm_right-title_m {
+  width: 50%;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  left: 50%;
+  justify-content: left;
+  align-items: center;
+}
 
-  
+#calm_animated-title_m {
+  font-weight: bold;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 10vh;
+  transition: font-size 0.3s ease;
+  color: #183457;
+  color: white;
+  color: #3b4322;
+}
+.ag-launch-page-title-cm {
+  height: 150vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
 
-  
-  
-  
-  
-  /* Ingredients */
-  .ag-animation-3-cm{
-    height: 10vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--theme-color-teritary);
+.ag-launch-title-part-cm {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+}
+
+.ag-launch-title-part-cm h1 {
+  font-size: 75px;
+  font-family: var(--theme-font-fam-primary);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.title-part-Hook-1-cm {
+  z-index: 10;
+}
+
+.title-part-Hook-2-cm {
+  opacity: 0;
+}
+
+.title-part-Hook-3-cm {
+  opacity: 0;
+}
+.title-part-Hook-4-cm {
+  opacity: 0;
+}
+
+/* Canvas 1 */
+
+.ag-product-animation-container-m-1-cm {
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+}
+
+#ag-product-animation-canvas-1-cm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 15%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 15% 0%;
+}
+
+/* Ingredients */
+.ag-animation-3-cm {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--theme-color-teritary);
+}
+
+.ag-animation-3-cm h1 {
+  font-weight: 300;
+  font-size: 14px;
+  color: white;
+  font-family: var(--theme-font-fam-primary);
+}
+
+.ag-product-ingredients-container-cm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ag-product-ingredients-container-div-cm {
+  display: flex;
+  overflow-x: scroll;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.ag-product-ingredient-card-cm {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: var(--theme-font-fam-secondary);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 10px 10px 40px 20px;
+}
+
+.ag-product-ingredient-card-cm img {
+  height: 300px;
+  margin-bottom: 10px;
+  animation: ingAnimate 3s ease-in-out infinite;
+}
+
+@keyframes ingAnimate {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  
-  .ag-animation-3-cm h1{
-    font-weight: 300;
-    font-size: 14px;
-    color: white;
-    font-family: var(--theme-font-fam-primary);
+  50% {
+    transform: translateY(-10px);
   }
-  
-  .ag-product-ingredients-container-cm{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.ag-product-ingredient-card-cm h1 {
+  font-weight: 300;
+  font-size: 18px;
+  border-top: 1px solid var(--theme-color-teritary);
+  width: 100%;
+  padding-top: 10px;
+}
+
+.ag-product-ingredient-card-cm span {
+  font-weight: 300;
+  font-size: 12px;
+  padding: 0% 2%;
+}
+
+@media screen and (min-width: 1280px) {
+  .ag-product-ingredients-container-div-cm {
+    width: 60%;
   }
-  
-  
-  .ag-product-ingredients-container-div-cm{
-    display: flex;
-    overflow-x: scroll;
-    gap: 10px;
-    margin-top: 40px;
-  }
-  
-  .ag-product-ingredient-card-cm{
-    width: 300px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-family: var(--theme-font-fam-secondary);
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    margin: 10px 10px 40px 20px;
-  }
-  
-  .ag-product-ingredient-card-cm img{
-    height: 300px;
-    margin-bottom: 10px;
-    animation: ingAnimate 3s ease-in-out infinite;
-  }
-  
-  @keyframes ingAnimate {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  
-  .ag-product-ingredient-card-cm h1{
-    font-weight: 300;
-    font-size: 18px;
-    border-top: 1px solid var(--theme-color-teritary);
-    width: 100%;
-    padding-top: 10px;
-  }
-  
-  .ag-product-ingredient-card-cm span{
-    font-weight: 300;
-    font-size: 12px;
-    padding: 0% 2%;
-  
-  }
-  
-  @media screen and (min-width: 1280px) {
-    .ag-product-ingredients-container-div-cm {
-      width:60%;
-    }
-  }
+}

@@ -9,74 +9,72 @@ const CalmingMoisturizerLaunchPage = () => {
   useEffect(() => {
     let tl = gsap.timeline();
 
-    tl.to(".title-part-Hook-1-cm", {
-      opacity: 0,
-      scale: 1.5,
+    tl.to(".calm_left-title_m", {
       scrollTrigger: {
-        trigger: ".ag-launch-page-title-cm",
-        start: "top 5%",
-        end: "top 0%",
-        scrub: 1,
+        trigger: ".ag-product-animation-canvas-div-1-cm",
+        start: "top 85%",
+        end: "top 60%",
+        scrub: 5,
+        // markers: true,
+
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const leftTitle_m = document.querySelector(".calm_left-title_m h1");
+          if (leftTitle_m) {
+            if (progress > 0.5) {
+              leftTitle_m.innerText = "AC-";
+            } else {
+              leftTitle_m.innerText = "AC";
+            }
+          }
+        },
       },
     })
-      .to(".title-part-Hook-2-cm", {
-        opacity: 1,
-        scale: 1.5,
+      .to(".calm_right-title_m", {
         scrollTrigger: {
-          trigger: ".ag-launch-page-title-cm",
-          start: "top 0%",
-          end: "top -15%",
-          scrub: 1,
+          trigger: ".ag-product-animation-canvas-div-1-cm",
+          start: "top 85%",
+          end: "top 60%",
+          scrub: 5,
+          // markers: true,
+
+          onUpdate: (self) => {
+            const progress = self.progress;
+            const rightTitle = document.querySelector(".calm_right-title_m h1");
+            if (rightTitle) {
+              if (progress > 0.5) {
+                rightTitle.innerText = "NO!";
+                rightTitle.style.color = "#e3e898";
+              } else {
+                rightTitle.innerText = "NE?";
+                rightTitle.style.color = "#3b4322";
+              }
+            }
+          },
         },
       })
-      .to(".title-part-Hook-2-cm", {
-        opacity: 0,
-        scale: 1,
+      .to(".calm_left-title_m", {
+        x: "-50vw",
+        ease: "power1.out",
+        fontSize: "28px",
         scrollTrigger: {
-          trigger: ".ag-launch-page-title-cm",
-          start: "top -15%",
-          end: "top -20%",
+          trigger: ".ag-product-animation-canvas-div-1-cm",
+          start: "top 30%",
+          end: "top 15%",
           scrub: 1,
+          // markers: true,
         },
       })
-      .to(".title-part-Hook-3-cm", {
-        opacity: 1,
-        scale: 1.5,
+      .to(".calm_left-title_m", {
+        x: "-50vw",
+        ease: "power1.out",
+        fontSize: "28px",
         scrollTrigger: {
-          trigger: ".ag-launch-page-title-cm",
-          start: "top -20%",
-          end: "top -35%",
+          trigger: ".ag-product-animation-canvas-div-1-cm",
+          start: "top 30%",
+          end: "top 15%",
           scrub: 1,
-        },
-      })
-      .to(".title-part-Hook-3-cm", {
-        opacity: 0,
-        scale: 1,
-        scrollTrigger: {
-          trigger: ".ag-launch-page-title-cm",
-          start: "top -35%",
-          end: "top -40%",
-          scrub: 1,
-        },
-      })
-      .to(".title-part-Hook-4-cm", {
-        opacity: 1,
-        scale: 1.5,
-        scrollTrigger: {
-          trigger: ".ag-launch-page-title-cm",
-          start: "top -40%",
-          end: "top -55%",
-          scrub: 1,
-        },
-      })
-      .to(".title-part-Hook-4-cm", {
-        opacity: 0,
-        scale: 1,
-        scrollTrigger: {
-          trigger: ".ag-launch-page-title-cm",
-          start: "top -55%",
-          end: "top -60%",
-          scrub: 1,
+          // markers: true,
         },
       });
   }, []);
@@ -157,28 +155,21 @@ const CalmingMoisturizerLaunchPage = () => {
   return (
     <main className="ag-tempalte-container">
       <section className="ag-launch-page-container-cm">
-        {/* Animated Title */}
-        <div className="ag-launch-page-title-cm">
-          <div className="ag-launch-title-part-cm title-part-Hook-1-cm">
-            <h1>Tinted</h1>
+        <div className="calm_product-title_m">
+          <div className="calm_left-title_m">
+            <h1 id="calm_animated-title_m">AC</h1>
           </div>
-
-          <div className="ag-launch-title-part-cm title-part-Hook-2-cm">
-            <h1>Just</h1>
-          </div>
-
-          <div className="ag-launch-title-part-cm title-part-Hook-3-cm">
-            <h1>Got</h1>
-          </div>
-
-          <div className="ag-launch-title-part-cm title-part-Hook-4-cm">
-            <h1>Better</h1>
+          <div className="calm_right-title_m">
+            <h1 id="calm_animated-title_m">NE?</h1>
           </div>
         </div>
 
         <div className="ag-product-animation-container-m-1-cm">
           <div className="ag-product-animation-canvas-div-1-cm">
-            <canvas ref={canvasRef} id="ag-product-animation-canvas-1-cm"></canvas>
+            <canvas
+              ref={canvasRef}
+              id="ag-product-animation-canvas-1-cm"
+            ></canvas>
           </div>
         </div>
 
