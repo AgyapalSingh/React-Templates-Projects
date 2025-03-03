@@ -82,6 +82,23 @@
   font-family: var(--theme-font-fam-primary);
 }
 
+.ag-animation-3{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--theme-color-teritary);
+}
+
+.ag-animation-3 h1{
+  font-weight: 300;
+  font-size: 14px;
+  color: white;
+  font-family: var(--theme-font-fam-primary);
+}
+
 /* Canvas 1 */
 
 .ag-product-animation-container-m-1{
@@ -102,7 +119,7 @@
   background: var(--theme-color-teritary);
 }
 
-/* Canvas 1 */
+/* Canvas 2 */
 
 .ag-product-animation-container-m-2{
   height: 150vh;
@@ -111,6 +128,27 @@
 }
 
 #ag-product-animation-canvas-2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 15%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 15% 0%;
+  background: var(--theme-color-teritary);
+}
+
+
+/* Canvas 3 */
+
+.ag-product-animation-container-m-3{
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+}
+
+#ag-product-animation-canvas-3{
   display: flex;
   justify-content: center;
   align-items: center;

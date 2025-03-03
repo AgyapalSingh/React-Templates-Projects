@@ -232,6 +232,87 @@ const TintedLaunchPage = () => {
     });
   };
 
+
+
+
+
+
+
+
+
+  // Canvas 2
+  const canvasRef_3 = useRef(null);
+  const [images_3, setImages_3] = useState([]);
+  const frames_3 = useRef({ currentIndex_3: 0, maxIndex_3: 65 });
+
+  useEffect(() => {
+    const preloadImages_3 = async () => {
+      let loadedImages_3 = [];
+      let imagesLoaded_3 = 0;
+
+      for (let i = 0; i < frames_3.current.maxIndex_3; i++) {
+        const imageUrl_3 = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming_Sunscreen_${i
+          .toString()
+          .padStart(3, "0")}.png?v=1737009142`;
+
+        const img_3 = new Image();
+        img_3.src = imageUrl_3;
+        img_3.onload = () => {
+          imagesLoaded_3++;
+          if (imagesLoaded_3 === frames_3.current.maxIndex_3) {
+            setImages_3(loadedImages_3);
+          }
+        };
+        loadedImages_3.push(img_3);
+      }
+    };
+
+    preloadImages_3();
+  }, []);
+
+  useEffect(() => {
+    if (images_3.length === frames_3.current.maxIndex_3) {
+      loadImage_3(0);
+      startAnimation_3();
+    }
+  }, [images_3]);
+
+  const loadImage_3 = (index) => {
+    if (!canvasRef_3.current || index < 0 || index >= frames_3.current.maxIndex_3)
+      return;
+    const ctx_3 = canvasRef_3.current.getContext("2d");
+    const img_3 = images_3[index];
+    if (!img_3) return;
+
+    canvasRef_3.current.width = 300;
+    canvasRef_3.current.height = 500;
+    const scaleX_3 = canvasRef_3.current.width / img_3.width;
+    const scaleY_3 = canvasRef_3.current.height / img_3.height;
+    const scale_3 = Math.max(scaleX_3, scaleY_3);
+    const newWidth_3 = img_3.width * scale_3;
+    const newHeight_3 = img_3.height * scale_3;
+    const offsetX_3 = (canvasRef_3.current.width - newWidth_3) / 2;
+    const offsetY_3 = (canvasRef_3.current.height - newHeight_3) / 2;
+
+    ctx_3.clearRect(0, 0, canvasRef_3.current.width, canvasRef_3.current.height);
+    ctx_3.imageSmoothingEnabled = true;
+    ctx_3.imageSmoothingQuality = "high";
+    ctx_3.drawImage(img_3, offsetX_3, offsetY_3, 300, 500);
+  };
+
+  const startAnimation_3 = () => {
+    gsap.to(frames_3.current, {
+      currentIndex_3: frames_3.current.maxIndex_3 - 1,
+      scrollTrigger: {
+        trigger: ".ag-product-animation-canvas-div-3",
+        start: "top 45%",
+        end: "top 10%",
+        scrub: 1,
+      },
+      onUpdate: () => loadImage_3(Math.floor(frames_3.current.currentIndex_3)),
+    });
+  };
+
   return (
     <main className="ag-tempalte-container">
       <section className="ag-launch-page-container">
@@ -271,6 +352,19 @@ const TintedLaunchPage = () => {
         <div className="ag-product-animation-container-m-2">
           <div className="ag-product-animation-canvas-div-2">
             <canvas ref={canvasRef_2} id="ag-product-animation-canvas-2"></canvas>
+          </div>
+        </div>
+
+
+
+
+        <div className="ag-animation-3">
+          <h1>Animation 3</h1>
+        </div>
+
+        <div className="ag-product-animation-container-m-3">
+          <div className="ag-product-animation-canvas-div-3">
+            <canvas ref={canvasRef_3} id="ag-product-animation-canvas-3"></canvas>
           </div>
         </div>
       </section>
