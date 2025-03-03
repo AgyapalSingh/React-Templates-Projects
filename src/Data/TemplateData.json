@@ -5,7 +5,7 @@
     "description": "Contact Form is linked",
     "description-2": "Google Sheet Using API.",
     "linkTo": "affiliate-program-page",
-    "img": "/imgs/Affliliate-project.png"
+    "img": "/imgs/Templates/Affiliate-Project.png"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "description": "Contact Form is linked",
     "description-2": "Google Sheet and Google Drive Using API. ",
     "linkTo": "careers-page",
-    "img": "/imgs/Affliliate-project.png"
+    "img": "/imgs/Templates/Careers-Project.png"
   },
   {
     "id": 3,
