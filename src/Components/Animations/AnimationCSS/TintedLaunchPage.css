@@ -177,7 +177,7 @@
 .ag-product-ingredients-container-div{
   display: flex;
   overflow-x: scroll;
-  gap: 30px;
+  gap: 10px;
   margin-top: 40px;
 }
 
@@ -191,7 +191,7 @@
   text-align: center;
   font-family: var(--theme-font-fam-secondary);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin: 10px 10px 40px 10px;
+  margin: 10px 10px 40px 20px;
 }
 
 .ag-product-ingredient-card img{
