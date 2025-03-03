@@ -124,8 +124,8 @@ const TintedLaunchPage = () => {
     const img = images[index];
     if (!img) return;
 
-    canvasRef.current.width = 350;
-    canvasRef.current.height = 600;
+    canvasRef.current.width = 300;
+    canvasRef.current.height = 500;
     const scaleX = canvasRef.current.width / img.width;
     const scaleY = canvasRef.current.height / img.height;
     const scale = Math.max(scaleX, scaleY);
@@ -137,7 +137,7 @@ const TintedLaunchPage = () => {
     ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
-    ctx.drawImage(img, offsetX, offsetY, 350, 600);
+    ctx.drawImage(img, offsetX, offsetY, 300, 500);
   };
 
   const startAnimation = () => {
