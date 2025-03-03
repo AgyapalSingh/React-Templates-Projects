@@ -78,5 +78,7 @@
   align-items: center;
   position: sticky;
   top: 15%;
-  border: 1px saddlebrown solid;
+  margin-top: 40px;
+  padding: 15% 0%;
+  background: var(--theme-color-teritary);
 }
