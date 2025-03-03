@@ -41,7 +41,7 @@ const JobsForm = () => {
 
     if (jobSelectRef.current) {
       jobSelectRef.current.style.border = "3px solid #183457";
-      setTimeout(() => (jobSelectRef.current.style.border = ""), 2000);
+      setTimeout(() => (jobSelectRef.current.style.border = ""), 1500);
     }
   };
 
