@@ -196,14 +196,26 @@
 
 .ag-product-ingredient-card img{
   height: 300px;
-  border-bottom: 1px solid var(--theme-color-teritary);
   margin-bottom: 10px;
+  animation: ingAnimate 3s ease-in-out infinite;
+}
+
+@keyframes ingAnimate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .ag-product-ingredient-card h1{
   font-weight: 300;
   font-size: 18px;
-
+  border-top: 1px solid var(--theme-color-teritary);
+  width: 100%;
+  padding-top: 10px;
 }
 
 .ag-product-ingredient-card span{
