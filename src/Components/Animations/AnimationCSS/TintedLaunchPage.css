@@ -45,3 +45,38 @@
 .title-part-Hook-4 {
   opacity: 0;
 }
+
+
+.ag-animation-1{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--theme-color-teritary);
+}
+
+.ag-animation-1 h1{
+  font-weight: 300;
+  font-size: 14px;
+  color: white;
+  font-family: var(--theme-font-fam-primary);
+}
+
+/* Canvas 1 */
+
+.ag-product-animation-container-m-1{
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+}
+
+#ag-product-animation-canvas-1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 15%;
+  border: 1px saddlebrown solid;
+}

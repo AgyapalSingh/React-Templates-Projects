@@ -6,10 +6,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const TintedLaunchPage = () => {
-
   useEffect(() => {
     let tl = gsap.timeline();
-   
+
     tl.to(".title-part-Hook-1", {
       opacity: 0,
       scale: 1.5,
@@ -100,6 +99,16 @@ const TintedLaunchPage = () => {
 
           <div className="ag-launch-title-part title-part-Hook-4">
             <h1>Better</h1>
+          </div>
+        </div>
+
+        <div className="ag-animation-1">
+          <h1>Animation For Title - 2</h1>
+        </div>
+
+        <div className="ag-product-animation-container-m-1">
+          <div className="ag-product-animation-canvas-div-1">
+            <canvas id="ag-product-animation-canvas-1"></canvas>
           </div>
         </div>
       </section>
