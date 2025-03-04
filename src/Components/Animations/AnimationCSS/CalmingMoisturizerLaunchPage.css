@@ -2,6 +2,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-image: url(../../../../public/imgs/Animation/CalmingMoisturizerLP_BG.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  scroll-behavior: smooth;
 }
 
 /* 1. Title Div */
@@ -15,7 +20,7 @@
 .calm_left-title_m {
   width: 50%;
   position: fixed;
-  height: 100%;
+  height: 90%;
   display: flex;
   justify-content: right;
   align-items: center;
@@ -24,7 +29,7 @@
 .calm_right-title_m {
   width: 50%;
   position: fixed;
-  height: 100%;
+  height: 90%;
   display: flex;
   left: 50%;
   justify-content: left;
@@ -111,13 +116,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--theme-color-teritary);
+  background-color: #3b4322;
 }
 
 .ag-animation-3-cm h1 {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 14px;
-  color: white;
+  color: #e3e898;
   font-family: var(--theme-font-fam-primary);
 }
 
@@ -145,6 +150,9 @@
   font-family: var(--theme-font-fam-secondary);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin: 10px 10px 40px 20px;
+  background-color: #e3e898;
+  border-radius: 10px;
+  color: #3b4322;
 }
 
 .ag-product-ingredient-card-cm img {
@@ -164,7 +172,7 @@
 }
 
 .ag-product-ingredient-card-cm h1 {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 18px;
   border-top: 1px solid var(--theme-color-teritary);
   width: 100%;
@@ -172,7 +180,7 @@
 }
 
 .ag-product-ingredient-card-cm span {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 12px;
   padding: 0% 2%;
 }

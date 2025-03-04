@@ -29,54 +29,57 @@ const CalmingMoisturizerLaunchPage = () => {
           }
         },
       },
-    })
-      .to(".calm_right-title_m", {
-        scrollTrigger: {
-          trigger: ".ag-product-animation-canvas-div-1-cm",
-          start: "top 85%",
-          end: "top 60%",
-          scrub: 5,
-          // markers: true,
+    });
 
-          onUpdate: (self) => {
-            const progress = self.progress;
-            const rightTitle = document.querySelector(".calm_right-title_m h1");
-            if (rightTitle) {
-              if (progress > 0.5) {
-                rightTitle.innerText = "NO!";
-                rightTitle.style.color = "#e3e898";
-              } else {
-                rightTitle.innerText = "NE?";
-                rightTitle.style.color = "#3b4322";
-              }
+    tl.to(".calm_right-title_m", {
+      scrollTrigger: {
+        trigger: ".ag-product-animation-canvas-div-1-cm",
+        start: "top 85%",
+        end: "top 60%",
+        scrub: 5,
+        // markers: true,
+
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const rightTitle = document.querySelector(".calm_right-title_m h1");
+          if (rightTitle) {
+            if (progress > 0.5) {
+              rightTitle.innerText = "NO!";
+              rightTitle.style.color = "#e3e898";
+            } else {
+              rightTitle.innerText = "NE?";
+              rightTitle.style.color = "#3b4322";
             }
-          },
+          }
         },
-      })
-      .to(".calm_left-title_m", {
-        x: "-50vw",
-        ease: "power1.out",
-        fontSize: "28px",
-        scrollTrigger: {
-          trigger: ".ag-product-animation-canvas-div-1-cm",
-          start: "top 30%",
-          end: "top 15%",
-          scrub: 1,
-          // markers: true,
-        },
-      })
-      .to(".calm_left-title_m", {
-        x: "-50vw",
-        ease: "power1.out",
-        fontSize: "28px",
-        scrollTrigger: {
-          trigger: ".ag-product-animation-canvas-div-1-cm",
-          start: "top 30%",
-          end: "top 15%",
-          scrub: 1,
-          // markers: true,
-        },
-      });
+      },
+    });
+
+    tl.to(".calm_left-title_m", {
+      x: "-50vw",
+      ease: "power1.out",
+      fontSize: "28px",
+      scrollTrigger: {
+        trigger: ".ag-product-animation-canvas-div-1-cm",
+        start: "top 30%",
+        end: "top 15%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    tl.to(".calm_right-title_m", {
+      x: "+50vw",
+      ease: "power1.out",
+      fontSize: "28px",
+      scrollTrigger: {
+        trigger: ".ag-product-animation-canvas-div-1-cm",
+        start: "top 30%",
+        end: "top 15%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
   }, []);
 
   // Canvas 1
