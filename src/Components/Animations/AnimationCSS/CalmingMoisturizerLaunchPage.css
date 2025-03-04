@@ -130,6 +130,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 80px;
 }
 
 .ag-product-ingredients-container-div-cm {
@@ -137,6 +138,11 @@
   overflow-x: scroll;
   gap: 10px;
   margin-top: 40px;
+}
+
+.ag-product-ingredients-container-div-cm::-webkit-scrollbar-thumb {
+  background: #e3e898;
+  cursor: pointer;
 }
 
 .ag-product-ingredient-card-cm {
