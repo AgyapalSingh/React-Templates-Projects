@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const CalmingMoisturizerLaunchPage = () => {
   useEffect(() => {
     let tl = gsap.timeline();
+    let preTl = gsap.timeline();
 
     tl.to(".calm_left-title_m", {
       scrollTrigger: {
@@ -97,7 +98,7 @@ const CalmingMoisturizerLaunchPage = () => {
     });
 
 
-    tl.from(".ag-pre-order-btn-div", {
+    preTl.from(".ag-pre-order-btn-div", {
       duration: 0.5,
       opacity: 0,
       scrollTrigger: {
@@ -107,15 +108,13 @@ const CalmingMoisturizerLaunchPage = () => {
         scrub: 1,
         // markers: true,
       },
-    });
-
-    tl.to(".ag-pre-order-btn-div", {
+    }).to(".ag-pre-order-btn-div", {
       duration: 0.5,
       opacity: 0,
       scrollTrigger: {
         trigger: ".ag-product-result",
-        start: "bottom 0%",
-        end: "bottom 0%",
+        start: "bottom 100%",
+        end: "bottom 99%",
         scrub: 1,
         // markers: true,
       },
