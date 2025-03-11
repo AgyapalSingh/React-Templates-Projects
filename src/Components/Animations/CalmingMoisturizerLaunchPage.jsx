@@ -102,9 +102,9 @@ const CalmingMoisturizerLaunchPage = () => {
       duration: 0.5,
       opacity: 0,
       scrollTrigger: {
-        trigger: ".ag-product-animation-container-m-1-cm",
-        start: "top 75%",
-        end: "top 45%",
+        trigger: ".ag-product-benefit-container-cm",
+        start: "top 100%",
+        end: "top 75%",
         scrub: 1,
         // markers: true,
       },
