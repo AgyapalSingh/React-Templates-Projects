@@ -259,7 +259,7 @@
   height: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   position: fixed;
   bottom: 5px;
