@@ -97,7 +97,6 @@ const CalmingMoisturizerLaunchPage = () => {
       },
     });
 
-
     preTl.from(".ag-pre-order-btn-div", {
       duration: 0.5,
       opacity: 0,
@@ -208,11 +207,11 @@ const CalmingMoisturizerLaunchPage = () => {
         </div>
 
         {/* Product Benefits */}
-        <div className="ag-product-benefit-container-cm">
-          <div className="ag-animation-3-cm ">
-            <h1>You'll Get :</h1>
-          </div>
 
+        <div className="ag-animation-3-cm ">
+          <h1>You'll Get :</h1>
+        </div>
+        <div className="ag-product-benefit-container-cm">
           <ul className="ag-product-benefit-list-cm">
             <li>Deeply hydrates and nourishes the skin</li>
             <li>Rejuvenates dull & dehydrated skin</li>
@@ -295,10 +294,8 @@ const CalmingMoisturizerLaunchPage = () => {
           />
         </div>
 
-
         <div className="ag-pre-order-btn-div">
-          <Link className="ag-pre-order-btn"
-          >Pre-Order</Link>
+          <Link className="ag-pre-order-btn">Pre-Order</Link>
         </div>
 
         <div className="ag-scroll-text">
