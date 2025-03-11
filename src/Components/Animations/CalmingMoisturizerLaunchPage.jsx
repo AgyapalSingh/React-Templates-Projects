@@ -279,7 +279,7 @@ const CalmingMoisturizerLaunchPage = () => {
 
         {/* Product Results */}
         <div className="ag-animation-3-cm">
-          <h1>Visible Results In 8 Weeks :</h1>
+          <h1>Acne to AcNO In 3 Weeks :</h1>
         </div>
 
         <div className="ag-product-result">
