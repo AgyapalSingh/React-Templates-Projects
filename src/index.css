@@ -136,8 +136,7 @@ footer {
   align-items: center;
   display: flex;
   justify-content: center;
-  position: sticky;
-  bottom: 0;
+  position: relative;
   z-index: 1000;
 }
 
