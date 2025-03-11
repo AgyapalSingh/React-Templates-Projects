@@ -172,6 +172,8 @@ const CalmingMoisturizerLaunchPage = () => {
   return (
     <main className="ag-tempalte-container">
       <section className="ag-launch-page-container-cm">
+
+        {/* Title */}
         <div className="calm_product-title_m">
           <div className="calm_left-title_m">
             <h1 id="calm_animated-title_m">AC</h1>
@@ -181,6 +183,7 @@ const CalmingMoisturizerLaunchPage = () => {
           </div>
         </div>
 
+        {/* Product Animation */}
         <div className="ag-product-animation-container-m-1-cm">
           <div className="ag-product-animation-canvas-div-1-cm">
             <canvas
@@ -190,6 +193,7 @@ const CalmingMoisturizerLaunchPage = () => {
           </div>
         </div>
 
+        {/* Product Benefits */}
         <div className="ag-product-benefit-container-cm">
           <div className="ag-product-benefit-title-cm">
             <h2>You'll Get :</h2>
@@ -205,7 +209,8 @@ const CalmingMoisturizerLaunchPage = () => {
           </ul>
         </div>
 
-        {/* Ingredients */}
+
+        {/* Product Ingredients */}
         <div className="ag-animation-3-cm">
           <h1>Because We Used :</h1>
         </div>
@@ -258,6 +263,27 @@ const CalmingMoisturizerLaunchPage = () => {
             </div>
           </div>
         </div>
+
+
+        {/* Product Results */}
+        <div className="ag-animation-3-cm">
+          <h1>Visible Results In 8 Weeks :</h1>
+        </div>
+
+        <div className="ag-product-result">
+          <img
+            className="img-small"
+            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Moisturiser-Mobile.gif?v=1736943966"
+            alt=""
+          />
+          <img
+            className="img-large"
+            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Moisturiser.gif?v=1736943648"
+            alt=""
+          />
+        </div>
+
+        <div></div>
       </section>
     </main>
   );

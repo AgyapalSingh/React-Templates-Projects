@@ -234,3 +234,23 @@
     width: 60%;
   }
 }
+
+
+
+
+.ag-product-result img{
+  width: 100%;
+}
+
+.img-large{
+  display: none;
+}
+
+@media screen and (min-width: 1280px) {
+  .img-small{
+    display: none;
+  }
+  .img-large{
+    display: block;
+  }
+}
