@@ -80,6 +80,20 @@ const CalmingMoisturizerLaunchPage = () => {
         // markers: true,
       },
     });
+
+    tl.from(".ag-product-benefit-list-cm li", {
+      y: 10,
+      duration: 0.5,
+      opacity: 0,
+      stagger: 1,
+
+      scrollTrigger: {
+        trigger: ".ag-product-benefit-list-cm",
+        start: "top 75%",
+        end: "top 45%",
+        scrub: 1,
+      },
+    });
   }, []);
 
   // Canvas 1
@@ -174,6 +188,21 @@ const CalmingMoisturizerLaunchPage = () => {
               id="ag-product-animation-canvas-1-cm"
             ></canvas>
           </div>
+        </div>
+
+        <div className="ag-product-benefit-container-cm">
+          <div className="ag-product-benefit-title-cm">
+            <h2>You'll Get :</h2>
+          </div>
+
+          <ul className="ag-product-benefit-list-cm">
+            <li>Deeply hydrates and nourishes the skin</li>
+            <li>Rejuvenates dull & dehydrated skin</li>
+            <li>Relieves dryness and itchiness</li>
+            <li>Reduces signs of aging</li>
+            <li>Improves skin texture</li>
+            <li>Calms sensitive skin</li>
+          </ul>
         </div>
 
         {/* Ingredients */}
