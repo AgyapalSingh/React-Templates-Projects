@@ -129,7 +129,7 @@ header {
 /* Footer */
 
 footer {
-  height: 80px;
+  height: 100px;
   background-color: var(--theme-color-teritary);
   color: var(--theme-color-primary);
   text-align: center;
