@@ -309,7 +309,7 @@ const CalmingMoisturizerLaunchPage = () => {
             <span>O</span>
             <span>L</span>
             <span>L</span>
-            <span>|</span>
+            <span>↓</span>
           </p>
         </div>
       </section>
