@@ -209,8 +209,8 @@ const CalmingMoisturizerLaunchPage = () => {
 
         {/* Product Benefits */}
         <div className="ag-product-benefit-container-cm">
-          <div className="ag-product-benefit-title-cm">
-            <h2>You'll Get :</h2>
+          <div className="ag-animation-3-cm ">
+            <h1>You'll Get :</h1>
           </div>
 
           <ul className="ag-product-benefit-list-cm">
