@@ -270,13 +270,14 @@
 
 .ag-pre-order-btn{
   background-color: #e3e898;
-  padding: 10px 40px;
+  padding: 6px 30px;
   font-weight: 300;
   text-transform: uppercase;
   font-family: var(--theme-font-fam-secondary);
   font-size: 12px;
   color: #3b4322;
   border-radius: 2px;
+  letter-spacing: 2px;
 }
 
 

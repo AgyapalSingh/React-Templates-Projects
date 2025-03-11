@@ -297,7 +297,7 @@ const CalmingMoisturizerLaunchPage = () => {
 
         <div className="ag-pre-order-btn-div">
           <Link className="ag-pre-order-btn"
-          >Pre-Order Now</Link>
+          >Pre-Order</Link>
         </div>
 
         <div className="ag-scroll-text">
