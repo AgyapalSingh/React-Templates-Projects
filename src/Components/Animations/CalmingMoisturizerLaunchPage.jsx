@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./AnimationCSS/CalmingMoisturizerLaunchPage.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,6 +95,19 @@ const CalmingMoisturizerLaunchPage = () => {
         scrub: 1,
       },
     });
+
+
+    tl.from(".ag-pre-order-btn-div", {
+      duration: 0.5,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".ag-product-animation-container-m-1-cm",
+        start: "top 75%",
+        end: "top 45%",
+        scrub: 1,
+        // markers: true,
+      },
+    });
   }, []);
 
   // Canvas 1
@@ -172,7 +186,6 @@ const CalmingMoisturizerLaunchPage = () => {
   return (
     <main className="ag-tempalte-container">
       <section className="ag-launch-page-container-cm">
-
         {/* Title */}
         <div className="calm_product-title_m">
           <div className="calm_left-title_m">
@@ -208,7 +221,6 @@ const CalmingMoisturizerLaunchPage = () => {
             <li>Calms sensitive skin</li>
           </ul>
         </div>
-
 
         {/* Product Ingredients */}
         <div className="ag-animation-3-cm">
@@ -264,7 +276,6 @@ const CalmingMoisturizerLaunchPage = () => {
           </div>
         </div>
 
-
         {/* Product Results */}
         <div className="ag-animation-3-cm">
           <h1>Visible Results In 8 Weeks :</h1>
@@ -283,7 +294,23 @@ const CalmingMoisturizerLaunchPage = () => {
           />
         </div>
 
-        <div></div>
+
+        <div className="ag-pre-order-btn-div">
+          <Link className="ag-pre-order-btn"
+          >Pre-Order Now</Link>
+        </div>
+
+        <div className="ag-scroll-text">
+          <p>
+            <span>S</span>
+            <span>C</span>
+            <span>R</span>
+            <span>O</span>
+            <span>L</span>
+            <span>L</span>
+            <span>|</span>
+          </p>
+        </div>
       </section>
     </main>
   );

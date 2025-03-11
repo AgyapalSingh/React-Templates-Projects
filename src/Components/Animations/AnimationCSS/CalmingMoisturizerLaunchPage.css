@@ -254,3 +254,64 @@
     display: block;
   }
 }
+
+.ag-pre-order-btn-div{
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.ag-pre-order-btn{
+  background-color: #e3e898;
+  padding: 10px 40px;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-family: var(--theme-font-fam-secondary);
+  font-size: 12px;
+  color: #3b4322;
+  border-radius: 2px;
+}
+
+
+
+
+
+.ag-scroll-text{
+  width: 14px;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 35px;
+  right: 20px;
+  animation: scrollUpDown 3s ease-in-out infinite;
+}
+
+@keyframes scrollUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.ag-scroll-text p {
+  font-size: 10px;
+  font-family: "Poppins";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #183457;
+}
+
+.ag-scroll-text p span {
+  margin-top: -5px;
+}
