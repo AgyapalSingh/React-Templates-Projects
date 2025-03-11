@@ -193,11 +193,10 @@
   align-items: center;
   text-align: center;
   font-family: var(--theme-font-fam-secondary);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   margin: 10px 10px 40px 20px;
-  background-color: #e3e898;
   border-radius: 10px;
-  color: #3b4322;
+  color: #e3e898;
+  border: 1px solid #59662e;
 }
 
 .ag-product-ingredient-card-cm img {
@@ -212,14 +211,14 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
 }
 
 .ag-product-ingredient-card-cm h1 {
   font-weight: 500;
   font-size: 18px;
-  border-top: 1px solid var(--theme-color-teritary);
+  border-top: 1px solid #e3e898;
   width: 100%;
   padding-top: 10px;
 }
