@@ -108,16 +108,6 @@ const CalmingMoisturizerLaunchPage = () => {
         scrub: 1,
         // markers: true,
       },
-    }).to(".ag-pre-order-btn-div", {
-      duration: 0.5,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: ".ag-product-result",
-        start: "bottom 100%",
-        end: "bottom 99%",
-        scrub: 1,
-        // markers: true,
-      },
     });
   }, []);
 
