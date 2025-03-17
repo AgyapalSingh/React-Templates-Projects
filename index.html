@@ -10,7 +10,7 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- <script>
+    <script>
       document.addEventListener(
         "DOMContentLoaded",
         function () {
@@ -19,13 +19,13 @@
             .then((json) => {
               if (json.country == "IN") {
                 document.querySelector(
-                  "main"
+                  "body"
                 ).innerHTML = `<div class="content_blocked" style="padding: 10rem; text-align: center; margin: auto">This content is not available in your country</div>`;
               }
             });
         },
         false
       );
-    </script> -->
+    </script>
   </body>
 </html>
