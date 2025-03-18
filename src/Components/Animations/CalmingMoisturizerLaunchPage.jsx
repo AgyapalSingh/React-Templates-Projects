@@ -284,14 +284,36 @@ const CalmingMoisturizerLaunchPage = () => {
         <div className="ag-product-result">
           <img
             className="img-small"
-            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Moisturiser-Mobile.gif?v=1736943966"
+            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming-Moisturizer-Gif-Mobile.gif?v=1741776001"
             alt=""
           />
           <img
             className="img-large"
-            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Moisturiser.gif?v=1736943648"
+            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Calming-Moisturizer-Gif.gif?v=1741776024"
             alt=""
           />
+        </div>
+
+        <div className="ag-animation-3-cm">
+          <h1>"Trusted by them, perfect for you."</h1>
+        </div>
+
+        <div className="ag-products-reels">
+          <div className="ag-product-reel">
+            <p>Reel 1</p>
+          </div>
+
+          <div className="ag-product-reel">
+            <p>Reel 2</p>
+          </div>
+
+          <div className="ag-product-reel">
+            <p>Reel 3</p>
+          </div>
+
+          <div className="ag-product-reel">
+            <p>Reel 4</p>
+          </div>
         </div>
 
         <div className="ag-pre-order-btn-div">
