@@ -80,7 +80,6 @@ const BodyButterLaunchPage = () => {
         start: "top 0%",
         end: "top -15%",
         scrub: 1,
-        markers: true
       },
     });
 
