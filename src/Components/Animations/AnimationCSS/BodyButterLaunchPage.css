@@ -1,0 +1,29 @@
+.ag-launch-page-container-bb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url(/imgs/Animation/Body_Butter_LP_BG.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  scroll-behavior: smooth;
+}
+
+.bb-product-title {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#bb-animated-title {
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Poppins", sans-serif;
+  font-size: 15vh;
+  transition: font-size 0.3s ease;
+  color: #183457;
+}
