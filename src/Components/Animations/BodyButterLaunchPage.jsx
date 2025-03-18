@@ -124,6 +124,33 @@ const BodyButterLaunchPage = () => {
     }
   }, [images]);
 
+  // const loadImage = (index) => {
+  //   if (!canvasRef.current || index < 0 || index >= frames.current.maxIndex)
+  //     return;
+
+  //   const ctx = canvasRef.current.getContext("2d");
+  //   const img = images[index];
+  //   if (!img) return;
+
+  //   canvasRef.current.width = window.innerWidth;
+  //   canvasRef.current.height = window.innerHeight;
+
+  //   const scale = Math.min(
+  //     canvasRef.current.width / img.width,
+  //     canvasRef.current.height / img.height
+  //   );
+  //   const newWidth = img.width * scale;
+  //   const newHeight = img.height * scale;
+
+  //   const offsetX = (canvasRef.current.width - newWidth) / 2;
+  //   const offsetY = (canvasRef.current.height - newHeight) / 2;
+  //   ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+  //   ctx.imageSmoothingEnabled = true;
+  //   ctx.imageSmoothingQuality = "high";
+
+  //   ctx.drawImage(img, offsetX, offsetY, newWidth, newHeight);
+  // };
+
   const loadImage = (index) => {
     if (!canvasRef.current || index < 0 || index >= frames.current.maxIndex)
       return;
@@ -132,19 +159,20 @@ const BodyButterLaunchPage = () => {
     const img = images[index];
     if (!img) return;
 
-    canvasRef.current.width = window.innerWidth;
-    canvasRef.current.height = window.innerHeight;
+    const canvasWidth = window.innerWidth;
+    const canvasHeight = window.innerHeight / 2;
 
-    const scale = Math.min(
-      canvasRef.current.width / img.width,
-      canvasRef.current.height / img.height
-    );
+    canvasRef.current.width = canvasWidth;
+    canvasRef.current.height = canvasHeight;
+
+    const scale = Math.min(canvasWidth / img.width, canvasHeight / img.height);
     const newWidth = img.width * scale;
     const newHeight = img.height * scale;
 
-    const offsetX = (canvasRef.current.width - newWidth) / 2;
-    const offsetY = (canvasRef.current.height - newHeight) / 2;
-    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+    const offsetX = (canvasWidth - newWidth) / 2;
+    const offsetY = (canvasHeight - newHeight) / 2;
+
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = "high";
 
