@@ -22,6 +22,20 @@ const BodyButterLaunchPage = () => {
       },
     });
 
+    tl_product_title.from(".ag-product-benefit-lis-bb li", {
+      y: 10,
+      duration: 0.5,
+      opacity: 0,
+      stagger: 1,
+
+      scrollTrigger: {
+        trigger: ".ag-product-benefit-lis-bb",
+        start: "top 75%",
+        end: "top 45%",
+        scrub: 1,
+      },
+    });
+
     let progressTracker = { progress: 0 };
 
     tl_product_title.to(progressTracker, {
@@ -153,12 +167,14 @@ const BodyButterLaunchPage = () => {
   return (
     <main className="ag-tempalte-container">
       <section className="ag-launch-page-container-bb">
+        {/* Product Title */}
         <div className="bb-product-title">
           <h1 id="bb-animated-title" ref={titleRef}>
             A.S.M.B.B
           </h1>
         </div>
 
+        {/* Product Animation */}
         <div className="ag-product-animation-container-bb">
           <div className="ag-product-animation-canvas-div-bb">
             <canvas
@@ -166,7 +182,23 @@ const BodyButterLaunchPage = () => {
               ref={canvasRef}
             ></canvas>
           </div>
-          <div className="em"></div>
+        </div>
+
+        {/* Product Benefits */}
+        <div className="ag-animation-bb ">
+          <h1>You'll Get :</h1>
+        </div>
+        <div className="ag-product-benefit-container-bb">
+          <ul className="ag-product-benefit-lis-bb">
+            <li>Smooth, nourished skin</li>
+            <li>Stretch mark reduction</li>
+            <li>Rich, creamy texture</li>
+            <li>Soothing fragrance</li>
+            <li>Skin regeneration</li>
+            <li>Intense moisture</li>
+            <li>Natural extracts</li>
+            <li>Elasticity boost</li>
+          </ul>
         </div>
 
         <div className="em"></div>
