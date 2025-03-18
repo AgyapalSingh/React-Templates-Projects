@@ -12,7 +12,6 @@
 .bb-product-title {
   height: 100vh;
   overflow: hidden;
-  /* border: 1px solid rgba(0, 47, 255, 0.726); */
 }
 
 #bb-animated-title {
@@ -28,15 +27,19 @@
   transition: font-size 0.3s ease;
   color: #183457;
   width: 100%;
-  /* border: 1px solid red; */
 }
 
 .ag-product-animation-container-bb {
-  height: 100vh;
-  /* border: 1px solid red; */
+  height: 150vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: end;
+}
+
+.ag-product-animation-canvas-div-bb {
+  position: sticky;
+  top: 10%;
 }
 
 .em {

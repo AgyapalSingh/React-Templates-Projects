@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./AnimationCSS/BodyButterLaunchPage.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -63,8 +63,8 @@ const BodyButterLaunchPage = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: ".ag-product-animation-container-bb",
-        start: "top 35%",
-        end: "top 20%",
+        start: "top 10%",
+        end: "top 5%",
         scrub: 1,
       },
     });
@@ -73,6 +73,82 @@ const BodyButterLaunchPage = () => {
       tl_product_title.kill();
     };
   }, []);
+  const canvasRef = useRef(null);
+  const [images, setImages] = useState([]);
+  const frames = useRef({ currentIndex: 0, maxIndex: 27 });
+
+  useEffect(() => {
+    const preloadImages = async () => {
+      let loadedImages = [];
+      let imagesLoaded = 0;
+
+      for (let i = 0; i < frames.current.maxIndex; i++) {
+        const imageUrl = `https://cdn.shopify.com/s/files/1/0589/0192/1956/files/BodyButter${i
+          .toString()
+          .padStart(3, "0")}.png?v=1735800447`;
+
+        const img = new Image();
+        console.log(imageUrl);
+        img.src = imageUrl;
+        img.onload = () => {
+          imagesLoaded++;
+          if (imagesLoaded === frames.current.maxIndex) {
+            setImages(loadedImages);
+          }
+        };
+        loadedImages.push(img);
+      }
+    };
+
+    preloadImages();
+  }, []);
+
+  useEffect(() => {
+    if (images.length === frames.current.maxIndex) {
+      loadImage(0);
+      startAnimation();
+    }
+  }, [images]);
+
+  const loadImage = (index) => {
+    if (!canvasRef.current || index < 0 || index >= frames.current.maxIndex)
+      return;
+
+    const ctx = canvasRef.current.getContext("2d");
+    const img = images[index];
+    if (!img) return;
+
+    canvasRef.current.width = window.innerWidth;
+    canvasRef.current.height = window.innerHeight;
+
+    const scale = Math.min(
+      canvasRef.current.width / img.width,
+      canvasRef.current.height / img.height
+    );
+    const newWidth = img.width * scale;
+    const newHeight = img.height * scale;
+
+    const offsetX = (canvasRef.current.width - newWidth) / 2;
+    const offsetY = (canvasRef.current.height - newHeight) / 2;
+    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+
+    ctx.drawImage(img, offsetX, offsetY, newWidth, newHeight);
+  };
+
+  const startAnimation = () => {
+    gsap.to(frames.current, {
+      currentIndex: frames.current.maxIndex - 1,
+      scrollTrigger: {
+        trigger: ".ag-product-animation-container-bb",
+        start: "top 45%",
+        end: "top 10%",
+        scrub: 1,
+      },
+      onUpdate: () => loadImage(Math.floor(frames.current.currentIndex)),
+    });
+  };
 
   return (
     <main className="ag-tempalte-container">
@@ -85,8 +161,12 @@ const BodyButterLaunchPage = () => {
 
         <div className="ag-product-animation-container-bb">
           <div className="ag-product-animation-canvas-div-bb">
-            <canvas id="ag-product-animation-canvas-bb"></canvas>
+            <canvas
+              id="ag-product-animation-canvas-bb"
+              ref={canvasRef}
+            ></canvas>
           </div>
+          <div className="em"></div>
         </div>
 
         <div className="em"></div>
