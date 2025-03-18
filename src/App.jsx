@@ -10,6 +10,7 @@ import AffiliateProgram from "./Components/Template/AffiliateProgram";
 import TintedLaunchPage from "./Components/Animations/TintedLaunchPage";
 import CalmingMoisturizerLaunchPage from "./Components/Animations/CalmingMoisturizerLaunchPage";
 import AutoScrollToTop from "./Snippit/AutoScrollToTop";
+import BodyButterLaunchPage from "./Components/Animations/BodyButterLaunchPage";
 
 function App() {
   const [showTopButton, setShowTopButton] = useState(false);
@@ -51,6 +52,11 @@ function App() {
           <Route
             path="/calming-moisturizer-launch-page"
             element={<CalmingMoisturizerLaunchPage />}
+          />
+
+          <Route
+            path="/body-butter-launch-page"
+            element={<BodyButterLaunchPage />}
           />
         </Routes>
       </AutoScrollToTop>

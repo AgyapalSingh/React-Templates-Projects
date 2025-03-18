@@ -14,5 +14,13 @@
     "description-2": "Calming Moisturizer.  ",
     "linkTo": "calming-moisturizer-launch-page",
     "img": "/imgs/Animation/Calm_Moisturizer_Launch_Page.png"
+  },
+  {
+    "id": 3,
+    "title": "Body Butter Launch Page",
+    "description": "Animation Using GSAP and Scroll Trigger",
+    "description-2": "Anti Stretch Mark Body Butter.  ",
+    "linkTo": "body-butter-launch-page",
+    "img": "/imgs/Animation/Calm_Moisturizer_Launch_Page.png"
   }
 ]
