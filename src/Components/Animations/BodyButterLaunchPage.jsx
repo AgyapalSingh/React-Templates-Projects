@@ -270,7 +270,7 @@ const BodyButterLaunchPage = () => {
 
         {/* Product Results */}
         <div className="ag-animation-bb">
-          <h1>Acne to AcNO In 3 Weeks :</h1>
+          <h1>Visible Results In 8 Weeks :</h1>
         </div>
 
         <div className="ag-product-result-bb">
