@@ -77,9 +77,10 @@ const BodyButterLaunchPage = () => {
       opacity: 0,
       scrollTrigger: {
         trigger: ".ag-product-animation-container-bb",
-        start: "top 10%",
-        end: "top 5%",
+        start: "top 0%",
+        end: "top -15%",
         scrub: 1,
+        markers: true
       },
     });
 
