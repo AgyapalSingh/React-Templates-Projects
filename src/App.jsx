@@ -11,6 +11,7 @@ import TintedLaunchPage from "./Components/Animations/TintedLaunchPage";
 import CalmingMoisturizerLaunchPage from "./Components/Animations/CalmingMoisturizerLaunchPage";
 import AutoScrollToTop from "./Snippit/AutoScrollToTop";
 import BodyButterLaunchPage from "./Components/Animations/BodyButterLaunchPage";
+import ExampleProduct from "./Components/ProductPages/ExampleProduct";
 
 function App() {
   const [showTopButton, setShowTopButton] = useState(false);
@@ -57,6 +58,11 @@ function App() {
           <Route
             path="/body-butter-launch-page"
             element={<BodyButterLaunchPage />}
+          />
+
+          <Route
+            path="/product-page"
+            element={<ExampleProduct />}
           />
         </Routes>
       </AutoScrollToTop>
