@@ -390,22 +390,18 @@ footer {
   margin-bottom: 20px;
   overflow: hidden;
   border-radius: 5px;
-
   background-color: var(--theme-color-primary);
-  border: 1px solid var(--theme-color-teritary);
 }
 
 .ag-animation-card-image {
   height: 300px;
-  padding: 20px;
   width: 300px;
 }
 
 .ag-animation-card-image img {
-  height: 260px;
-  width: 260px;
+  height: 300px;
+  width: 300px;
   object-fit: cover;
-  border: 1px solid var(--theme-color-teritary);
 }
 
 .ag-animation-card-content {
@@ -423,7 +419,7 @@ footer {
 
 .ag-animation-card-info h1 {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 700;
   font-family: var(--theme-font-fam-primary);
   color: var(--theme-color-teritary);
 }
