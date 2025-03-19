@@ -16,6 +16,86 @@ const ExampleProduct = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const accordionData = [
+    {
+      title: "Product Description",
+      content: `UniQaya’s SunScreen: Full Protection Broad Spectrum Tinted Sunscreen with SPF 50 is your go-to solution for complete sun protection. 
+      It is formulated with the perfect blend of natural ingredients to keep your skin nourished and protected from harmful UVA, UVB, and blue rays. 
+      \n\n
+
+      This tinted sunscreen comes with an SPF of 50, which provides maximum protection to your skin from sun damage. 
+      The broad-spectrum formula effectively blocks the harmful UVA and UVB rays, preventing premature aging and sunburn.
+      \n\n
+      The tinted sunscreen provides a sheer coverage, leaving your skin with a radiant glow. The lightweight formula is perfect for daily use and can be worn alone or as a makeup base. 
+      It blends seamlessly with your skin tone, giving you a natural look.
+      \n\n`,
+    },
+    {
+      title: "Key Ingredients",
+      content: `• Artichoke Extract\n\n
+      • Avocado Oil\n\n
+      • Carrot Seed Oil\n\n
+      • Linoleic Acid\n\n
+      • Lycopene\n\n
+      • Vitamin F\n\n`,
+    },
+    {
+      title: "Why would you love it?",
+      content: `- Water resistant/ Sweat resistant\n\n
+      - Natural SPF inducing ingredients\n\n
+      - Can be used indoors\n\n
+      - Lasts up to 4 hours\n\n
+      - Protects from UVA/ UVB/ HEV/ IR rays\n\n
+      - Shields Skin from Bluelight Rays\n\n
+      - Reduces signs of aging\n\n`,
+    },
+    {
+      title: "Who is it good for?",
+      content: `Skin Types: All Skin Types (Unisex)\n\n
+      Skin Concerns: Sun Damaged Skin, Gadget Screen Damaged Skin\n\n`,
+    },
+    {
+      title: "The Experience",
+      content: `The Texture- Lightweight, whipped\n\n
+      The Aroma- Fruity\n\n
+      Skin Feels- Hydrated & Protected\n\n
+      Skin Appears- Moisturised with light coverage\n\n`,
+    },
+    {
+      title: "How to use it?",
+      content: `- Cleanse your face and then apply your regular moisturizer.\n\n
+      - Take a coin-size amount of sunscreen.\n\n
+      - Apply all over the face and spread it out evenly.\n\n
+      - Make sure to apply to the exposed body parts.\n\n`,
+    },
+    {
+      title: "FAQ",
+      content: `1. How is it different from other broad-spectrum sunscreens with SPF 50?\n\n
+      It not only provides protection just from the harmful rays of the sun but also from the indoor HEV rays coming from gadgets.
+      \n\n
+      2. Can it be used on a moisturizer?\n\n
+      Yes, it can be used on top of a moisturizer and as a makeup base.\n\n
+  
+      3. Can we wear it indoors?\n\n
+      Yes, it protects against rays emitted by gadgets and prevents photoaging.\n\n`,
+    },
+    {
+      title: "Company Information",
+      content: `Marketed By: Unimarck Pharma (I) Ltd.\n\n
+      Plot No.76, Sector 82, JLPL Industrial Area,\n\n
+      SAS Nagar Mohali, Punjab-140308\n\n
+      Country of Origin: India\n\n
+      Customer Care: care@uniqaya.com | +91-8872033171\n\n`,
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <main className="ag-tempalte-container">
       <section className="ag-product-page-section">
@@ -210,17 +290,42 @@ const ExampleProduct = () => {
           </div>
 
           <div className="ag-product-result">
-          <img
-            className="img-small"
-            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Slide_05_Mobile.jpg?v=1725953109"
-            alt=""
-          />
-          <img
-            className="img-large"
-            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Final_Visible.jpg"
-            alt=""
-          />
+            <img
+              className="img-small"
+              src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Slide_05_Mobile.jpg?v=1725953109"
+              alt=""
+            />
+            <img
+              className="img-large"
+              src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Final_Visible.jpg"
+              alt=""
+            />
+          </div>
         </div>
+
+        <div className="ag-product-accordion">
+          {accordionData.map((item, index) => (
+            <div key={index} className="ag-product-accordion__item">
+              <div
+                className="ag-product-accordion__header"
+                onClick={() => toggleAccordion(index)}
+              >
+                <h2>{item.title}</h2>
+                <span
+                  className={`ag-product-accordion__toggle ${
+                    activeIndex === index ? "open" : ""
+                  }`}
+                ></span>
+              </div>
+              {activeIndex === index && (
+                <div className="ag-product-accordion__body">
+                  {item.content.split("\n\n").map((line, idx) => (
+                    <p key={idx}>{line}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
     </main>
