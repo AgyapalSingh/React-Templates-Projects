@@ -396,13 +396,21 @@ footer {
 .ag-animation-card-image {
   height: 300px;
   width: 300px;
+  overflow: hidden;
 }
 
 .ag-animation-card-image img {
   height: 300px;
   width: 300px;
   object-fit: cover;
+  transition: transform 0.5s ease-in-out;
 }
+
+.ag-animation-card-image img:hover {
+  transform: scale(1.5);
+}
+
+
 
 .ag-animation-card-content {
   display: flex;
