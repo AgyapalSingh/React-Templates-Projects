@@ -97,7 +97,14 @@ const ExampleProduct = () => {
 
         <div className="ag-product-description">
           <div className="ag-product-vid">
-          <video className="ag-product-large-vid" autoPlay loop muted playsInline style={{ width: "100%" }}>
+            <video
+              className="ag-product-large-vid"
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ width: "100%" }}
+            >
               <source
                 src="https://cdn.shopify.com/videos/c/o/v/1944655a6090498cbfb2d49a84b01b62.mp4"
                 type="video/mp4"
@@ -105,7 +112,14 @@ const ExampleProduct = () => {
               <source src="movie.ogg" type="video/ogg" />
               Your browser does not support the video tag.
             </video>
-            <video className="ag-product-small-vid" autoPlay loop muted playsInline style={{ width: "100%" }}>
+            <video
+              className="ag-product-small-vid"
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ width: "100%" }}
+            >
               <source
                 src="https://cdn.shopify.com/videos/c/o/v/3aa06dc9130f42c6974a341e63eb217c.mp4"
                 type="video/mp4"
@@ -194,6 +208,19 @@ const ExampleProduct = () => {
               />
             </div>
           </div>
+
+          <div className="ag-product-result">
+          <img
+            className="img-small"
+            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Slide_05_Mobile.jpg?v=1725953109"
+            alt=""
+          />
+          <img
+            className="img-large"
+            src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Final_Visible.jpg"
+            alt=""
+          />
+        </div>
         </div>
       </section>
     </main>
