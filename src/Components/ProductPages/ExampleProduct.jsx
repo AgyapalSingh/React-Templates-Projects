@@ -6,15 +6,15 @@ const ExampleProduct = () => {
 
   useEffect(() => {
     const updateVisitors = () => {
-      const newVisitors = 100 + Math.floor(Math.random() * 101); // Random between 100-200
+      const newVisitors = 100 + Math.floor(Math.random() * 101);
       setVisitors(newVisitors);
     };
 
-    updateVisitors(); // Initial update
+    updateVisitors();
 
-    const interval = setInterval(updateVisitors, 10000); // Update every 10s
+    const interval = setInterval(updateVisitors, 10000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
   return (
     <main className="ag-tempalte-container">
@@ -95,7 +95,106 @@ const ExampleProduct = () => {
           </div>
         </div>
 
-        <div className="ag-product-description"></div>
+        <div className="ag-product-description">
+          <div className="ag-product-vid">
+          <video className="ag-product-large-vid" autoPlay loop muted playsInline style={{ width: "100%" }}>
+              <source
+                src="https://cdn.shopify.com/videos/c/o/v/1944655a6090498cbfb2d49a84b01b62.mp4"
+                type="video/mp4"
+              />
+              <source src="movie.ogg" type="video/ogg" />
+              Your browser does not support the video tag.
+            </video>
+            <video className="ag-product-small-vid" autoPlay loop muted playsInline style={{ width: "100%" }}>
+              <source
+                src="https://cdn.shopify.com/videos/c/o/v/3aa06dc9130f42c6974a341e63eb217c.mp4"
+                type="video/mp4"
+              />
+              <source src="movie.ogg" type="video/ogg" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div className="ag-product-img-text ag-multicol">
+            <div className="ag-product-img-text-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Slide_01_Mobile.jpg"
+                alt=""
+              />
+            </div>
+            <div className="ag-product-img-text-text">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                ipsum, quod iure nam porro facilis perferendis architecto
+                suscipit distinctio tempore, voluptatum ullam dicta in cum Lorem
+                ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                ipsum, quod iure nam porro facilis perferendis architecto
+                suscipit distinctio tempore, voluptatum ullam dicta in cum.
+              </p>
+            </div>
+          </div>
+
+          <div className="ag-product-img-text ag-multicol-2">
+            <div className="ag-product-img-text-text">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                ipsum, quod iure nam porro facilis perferendis architecto
+                suscipit distinctio tempore, voluptatum ullam dicta in cum Lorem
+                ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                ipsum, quod iure nam porro facilis perferendis architecto
+                suscipit distinctio tempore, voluptatum ullam dicta in cum.
+              </p>
+            </div>
+            <div className="ag-product-img-text-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Slide_01_Mobile.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div className="ag-product-img-text ag-multicol">
+            <div className="ag-product-img-text-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Slide_01_Mobile.jpg"
+                alt=""
+              />
+            </div>
+            <div className="ag-product-img-text-text">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                ipsum, quod iure nam porro facilis perferendis architecto
+                suscipit distinctio tempore, voluptatum ullam dicta in cum Lorem
+                ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                ipsum, quod iure nam porro facilis perferendis architecto
+                suscipit distinctio tempore, voluptatum ullam dicta in cum.
+              </p>
+            </div>
+          </div>
+
+          <div className="ag-product-img-text ag-multicol-2">
+            <div className="ag-product-img-text-text">
+              <h1>Lorem ipsum dolor sit amet.</h1>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                ipsum, quod iure nam porro facilis perferendis architecto
+                suscipit distinctio tempore, voluptatum ullam dicta in cum Lorem
+                ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                ipsum, quod iure nam porro facilis perferendis architecto
+                suscipit distinctio tempore, voluptatum ullam dicta in cum.
+              </p>
+            </div>
+            <div className="ag-product-img-text-img">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0589/0192/1956/files/Tinted_Slide_01_Mobile.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
