@@ -346,9 +346,15 @@ footer {
 
 .ag-animation-title {
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   font-family: var(--theme-font-fam-primary);
   margin: 40px 0px;
+  color: var(--theme-color-teritary);
+  text-align: center;
+}
+
+.ag-animation-title i{
+  font-weight: 600;
 }
 
 .ag-animation-section {

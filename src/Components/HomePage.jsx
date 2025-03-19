@@ -6,7 +6,7 @@ import animationData from "../Data/AnimationData.json";
 const HomePage = () => {
   return (
     <main className="ag-tempalte-container">
-      <h1 className="ag-animation-title">List of Landing Pages</h1>
+      <h1 className="ag-animation-title">Landing Pages with <i>Animation on Scroll</i></h1>
       <section className="ag-animation-section">
         <div className="ag-animation-card-container">
           {animationData.map((item, index) => (
