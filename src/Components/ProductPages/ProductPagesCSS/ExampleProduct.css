@@ -1,0 +1,135 @@
+.ag-product-view {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+}
+
+.ag-product-img-div {
+  width: 100%;
+}
+
+.ag-product-img-div img {
+  width: 100%;
+}
+
+.ag-product-info {
+  font-family: var(--theme-font-fam-primary);
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ag-product-info button {
+  width: 100%;
+  height: 50px;
+  background-color: #183457;
+  color: white;
+  font-family: var(--theme-font-fam-primary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.ag-product-page-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ag-product-page-logos div img {
+  width: 100px;
+}
+
+.ag-product-add-offers {
+  border: 1px solid #f1f1f1;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.offers-header h2 {
+  font-family: var(--theme-font-fam-primary);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 5px 0px;
+  color: #183457;
+}
+
+.offer-description {
+  font-family: var(--theme-font-fam-secondary);
+  padding: 10px;
+  background: #f5f2ee;
+  border-radius: 5px;
+}
+
+.offer-content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  gap: 5px;
+}
+
+.offer-content p {
+  font-size: 12px;
+  color: #183457;
+  font-weight: 400;
+}
+
+.visitors {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.light {
+  background-color: #df708d;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 10px;
+  animation: glow 1s infinite ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    background-color: #df708d;
+  }
+  50% {
+    background-color: #df708d;
+    box-shadow: 5px 5px 15px #ffb9cc, -5px -5px 15px #ffb9cc;
+    transform: rotateZ(45deg);
+  }
+  0% {
+    background-color: #df708d;
+    transform: rotateZ(80deg);
+  }
+}
+
+.visitors-text{
+    font-size: 14px;
+    color: #183457;
+}
+
+@media screen and (min-width: 769px) {
+  .ag-product-view {
+    flex-direction: row;
+  }
+
+  .ag-product-img-div {
+    width: 50%;
+  }
+
+  .ag-product-info {
+    width: 50%;
+  }
+
+  .ag-product-page-logos {
+    justify-content: flex-start;
+  }
+}
