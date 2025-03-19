@@ -1,9 +1,9 @@
 [
     {
       "id": 1,
-      "title": "Tinted Sunscreen Launch Page",
-      "description": "Animation Using GSAP and Scroll Trigger",
-      "description-2": "Tinted Sunscreen.",
+      "title": "Example Product Page",
+      "description": "Product Page for ecommerce website",
+      "description-2": "Example Product Page.",
       "linkTo": "product-page",
       "img": "/imgs/ProductPage/ProductPage.png"
     }
